@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+Sitemap: https://zenia-web.vercel.app/sitemap.xml
+
+# Bloquear scrapers de entrenamiento (sin valor de citación)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+# Permitir agentes de recuperación en vivo (generan tráfico de citación)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /

@@ -1,0 +1,110 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model admin_users {
+  id             Int      @id @default(autoincrement())
+  email          String   @unique
+  password_hash  String
+  name           String
+  role           String   @default("admin")
+  last_login_at  DateTime?
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
+}
+
+model patients_leads {
+  id                  Int      @id @default(autoincrement())
+  full_name           String
+  phone               String
+  email               String?
+  consultation_reason String?
+  preferred_modality  String?
+  source              String   @default("website")
+  status              String   @default("new")
+  notes               String?
+  created_at          DateTime @default(now())
+  updated_at          DateTime @updatedAt
+}
+
+model services {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  title       String
+  description String
+  duration    String?
+  price       String?
+  active      Boolean  @default(true)
+  order       Int      @default(0)
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+}
+
+model testimonials {
+  id          Int      @id @default(autoincrement())
+  patient_name String
+  content     String
+  rating      Int      @default(5)
+  active      Boolean  @default(true)
+  order       Int      @default(0)
+  created_at  DateTime @default(now())
+}
+
+model contact_messages {
+  id         Int      @id @default(autoincrement())
+  name       String
+  email      String
+  phone      String?
+  message    String
+  consent    Boolean  @default(false)
+  read       Boolean  @default(false)
+  created_at DateTime @default(now())
+}
+
+model appointments {
+  id               Int      @id @default(autoincrement())
+  full_name        String
+  phone            String
+  email            String
+  service_type     String
+  appointment_date DateTime
+  appointment_time String
+  modality         String
+  status           String   @default("pending")
+  notes            String?
+  admin_notes      String?
+  consent          Boolean  @default(false)
+  created_at       DateTime @default(now())
+  updated_at       DateTime? @default(now())
+}
+
+model blog_posts {
+  id               Int       @id @default(autoincrement())
+  slug             String    @unique
+  title            String
+  excerpt          String
+  content          String    @db.LongText
+  featured_image   String?
+  category         String
+  meta_title       String?
+  meta_description String?
+  published_at     DateTime?
+  status           String    @default("draft")
+  created_at       DateTime  @default(now())
+  updated_at       DateTime? @default(now())
+}
+
+model faq_items {
+  id         Int       @id @default(autoincrement())
+  question   String
+  answer     String
+  order      Int       @default(0)
+  active     Boolean   @default(true)
+  created_at DateTime  @default(now())
+  updated_at DateTime? @default(now())
+}

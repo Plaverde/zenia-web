@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ivory: #FAF7F2;
+  --color-sage: #7A9E8E;
+  --color-sage-dark: #5C8070;
+  --color-sage-light: #A8C4B8;
+  --color-terracotta: #C4956A;
+  --color-terracotta-dark: #A87A52;
+  --color-sand: #E8DFD0;
+  --color-sand-light: #F0EAE0;
+  --color-charcoal: #2D2D2D;
+  --color-warm-gray: #595959;
+  --color-warm-gray-light: #757575;
+
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: var(--color-ivory);
+  --foreground: var(--color-charcoal);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-sage-light);
+  color: var(--color-charcoal);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 2px;
+}
+
+/* Form input base styles */
+input, textarea, select {
+  font-family: var(--font-sans);
 }

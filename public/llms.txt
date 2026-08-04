@@ -1,0 +1,34 @@
+# Zenia Álvarez Gulfo — Psicóloga Clínica en Montería
+
+> Acompañamiento psicológico profesional para ansiedad y depresión, con terapias de tercera generación como mindfulness y ACT, en Montería y modalidad virtual.
+
+## Servicios
+
+- [Servicios](https://zenia-web.vercel.app/servicios): Terapia individual, atención para ansiedad y depresión, presencial y virtual
+- [Reserva de Cita](https://zenia-web.vercel.app/reserva): Agenda tu primera sesión de terapia
+
+## Especialidades
+
+- [Ansiedad](https://zenia-web.vercel.app/especialidades/ansiedad): Manejo de síntomas de ansiedad con terapias de tercera generación
+- [Depresión](https://zenia-web.vercel.app/especialidades/depresion): Acompañamiento profesional para episodios depresivos
+- [Mindfulness](https://zenia-web.vercel.app/especialidades/mindfulness): Práctica de atención plena como herramienta terapéutica
+- [ACT](https://zenia-web.vercel.app/especialidades/act): Terapia de Aceptación y Compromiso
+
+## Blog
+
+- [Blog](https://zenia-web.vercel.app/blog): Artículos educativos sobre salud mental
+- [¿Qué es la ansiedad?](https://zenia-web.vercel.app/blog/que-es-la-ansiedad): Guía para entender y manejar la ansiedad
+- [Señales de depresión](https://zenia-web.vercel.app/blog/senales-depresion): Cómo identificar un episodio depresivo
+- [Mindfulness](https://zenia-web.vercel.app/blog/mindfulness-que-es): Qué es y qué no es la práctica de atención plena
+- [Terapia ACT](https://zenia-web.vercel.app/blog/terapia-act): Aceptar para no quedarse estancado
+
+## Sobre Mí
+
+- [Sobre Mí](https://zenia-web.vercel.app/sobre-mi): Biografía profesional y enfoque clínico
+- [Preguntas Frecuentes](https://zenia-web.vercel.app/faq): Respuestas comunes sobre el proceso terapéutico
+- [Contacto](https://zenia-web.vercel.app/contacto): Formulario de contacto y ubicación del consultorio
+
+## Legal
+
+- [Política de Datos](https://zenia-web.vercel.app/politica-datos): Tratamiento de datos personales
+- [Aviso de Privacidad](https://zenia-web.vercel.app/aviso-privacidad): Información sobre privacidad y confidencialidad
