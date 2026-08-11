@@ -26,31 +26,31 @@ export const SERVICES = [
     id: "terapia-individual",
     title: "Terapia Individual para Adultos",
     description:
-      "Espacio seguro y confidencial para trabajar tu bienestar emocional a tu ritmo, con un enfoque humano y basado en evidencia.",
+      "Un espacio seguro y confidencial para trabajar tu bienestar emocional a tu propio ritmo, con un enfoque humano, cercano y basado en evidencia.",
   },
   {
     id: "ansiedad",
     title: "Atención Especializada en Ansiedad",
     description:
-      "Manejo de síntomas de ansiedad mediante terapias de tercera generación que te ayudan a recuperar el equilibrio emocional.",
+      "Acompañamiento para entender y manejar la ansiedad desde terapias de tercera generación, como ACT y mindfulness, para que recuperes tu equilibrio poco a poco.",
   },
   {
     id: "depresion",
     title: "Atención Especializada en Depresión",
     description:
-      "Acompañamiento profesional para atravesar episodios depresivos, reconstruir motivación y recuperar espacios de bienestar.",
+      "Espacio de contención para atravesar episodios depresivos, reconstruir la motivación y encontrar de nuevo espacios de bienestar.",
   },
   {
     id: "terapia-presencial",
     title: "Terapia Presencial en Montería",
     description:
-      "Sesiones en consultorio en el centro de la ciudad, en un ambiente cálido, privado y equipado para tu comodidad.",
+      "Sesiones en consultorio ubicado en el centro de Montería, en un ambiente cálido, privado y pensado para tu comodidad.",
   },
   {
     id: "terapia-virtual",
     title: "Terapia Virtual (Videollamada)",
     description:
-      "Atención profesional desde donde te encuentres, con la misma calidad y confidencialidad que una sesión presencial.",
+      "Atención profesional desde donde te encuentres, con la misma calidad, confidencialidad y cuidado que una sesión presencial.",
   },
 ] as const;
 

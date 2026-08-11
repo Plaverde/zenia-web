@@ -3,18 +3,19 @@ import { z } from "zod";
 import { prisma } from "@/lib/db";
 import { rateLimit } from "@/lib/rate-limit";
 
-const contactSchema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  phone: z.string().optional().default(""),
-  message: z.string().optional().default(""),
-  consent: z.boolean(),
+const leadSchema = z.object({
+  full_name: z.string().trim().min(2),
+  phone: z.string().trim().min(7),
+  email: z.string().email().or(z.literal("")).optional(),
+  preferred_modality: z.enum(["presencial", "virtual", ""]).optional(),
+  preferred_contact: z.string().max(50).optional(),
+  marketing_consent: z.boolean(),
 });
 
 export async function POST(request: Request) {
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-  const rl = rateLimit(`contact:${ip}`, 10, 15 * 60 * 1000);
+  const rl = rateLimit(`lead:${ip}`, 10, 15 * 60 * 1000);
 
   if (!rl.allowed) {
     return NextResponse.json(
@@ -25,10 +26,9 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json();
-    const parsed = contactSchema.safeParse(body);
+    const parsed = leadSchema.safeParse(body);
 
     if (!parsed.success) {
-      console.error("Validation errors:", parsed.error.issues);
       return NextResponse.json(
         { success: false, error: "Datos inválidos" },
         { status: 400 }
@@ -37,28 +37,32 @@ export async function POST(request: Request) {
 
     const data = parsed.data;
 
-    if (!data.consent) {
+    if (!data.marketing_consent) {
       return NextResponse.json(
-        { success: false, error: "Debes aceptar el tratamiento de datos" },
+        {
+          success: false,
+          error: "Debes autorizar el uso de tus datos para ser contactada/o",
+        },
         { status: 400 }
       );
     }
 
-    await prisma.contact_messages.create({
+    await prisma.patients_leads.create({
       data: {
-        name: data.name,
-        email: data.email,
-        phone: data.phone || null,
-        message: data.message,
-        consent: true,
+        full_name: data.full_name,
+        phone: data.phone,
+        email: data.email || null,
+        preferred_modality: data.preferred_modality || null,
+        preferred_contact: data.preferred_contact || null,
+        marketing_consent: true,
       },
     });
 
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (error) {
-    console.error("Error creating contact message:", error);
+    console.error("Error creating lead:", error);
     return NextResponse.json(
-      { success: false, error: "Error al enviar el mensaje. Intenta de nuevo." },
+      { success: false, error: "Ocurrió un error. Intenta de nuevo." },
       { status: 500 }
     );
   }

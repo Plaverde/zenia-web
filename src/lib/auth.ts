@@ -49,7 +49,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         const email = credentials.email as string;
 
         if (!checkLoginRateLimit(email)) {
-          console.warn("[AUTH] Rate limit exceeded for:", email);
+          console.warn("[AUTH] Login rate limit exceeded");
           return null;
         }
 
@@ -57,7 +57,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           const user = await getAdminUser(email);
 
           if (!user) {
-            console.error("[AUTH] No user found for email:", credentials.email);
+            console.error("[AUTH] Login failed: unknown credentials");
             return null;
           }
 
@@ -67,13 +67,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           );
 
           if (!passwordMatch) {
-            console.error("[AUTH] Password mismatch for:", credentials.email);
+            console.error("[AUTH] Login failed: invalid password");
             return null;
           }
 
           await updateLastLogin(user.id);
 
-          console.log("[AUTH] Login successful for:", credentials.email);
+          console.log("[AUTH] Login successful");
           return {
             id: user.id.toString(),
             email: user.email,

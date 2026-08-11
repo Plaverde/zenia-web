@@ -25,6 +25,8 @@ model patients_leads {
   email               String?
   consultation_reason String?
   preferred_modality  String?
+  preferred_contact   String?
+  marketing_consent   Boolean  @default(false)
   source              String   @default("website")
   status              String   @default("new")
   notes               String?

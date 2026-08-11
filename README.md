@@ -1,5 +1,24 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Autoevaluación (`/autoevaluacion`)
+
+Self-screening flow for anxiety and depression (PHQ-9 / GAD-7) with local-only
+scoring: answers stay in the browser, nothing clinical is persisted or sent to
+the server. Includes a safety screen (PHQ-9 item 9), an optional lead form
+(`POST /api/lead`, rate-limited), and orientative — never diagnostic — results.
+See `CLINICAL-DISCLAIMER.md` for the disclaimer policy and
+`PRIVACY-IMPLEMENTATION.md` for how data handling works.
+
+## Documentation
+
+- `PRIVACY-IMPLEMENTATION.md` — how the current implementation handles data
+  minimization, local-only screening, rate limiting, security headers, auth,
+  and the marketing/clinical data separation (with a pending legal review list).
+- `CLINICAL-DISCLAIMER.md` — site-wide clinical disclaimer policy and editorial
+  rules for sensitive content.
+- `TESTING-CHECKLIST.md` — verification workflow (tsc, vitest 37 tests, build,
+  db:push) and manual QA checklists.
+
 ## Getting Started
 
 First, run the development server:

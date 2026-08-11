@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { StarRating } from "@/components/ui/StarRating";
 
 export async function TestimonialsPreview() {
   let testimonials: { patient_name: string; content: string; rating: number }[] = [];
@@ -21,10 +22,6 @@ export async function TestimonialsPreview() {
 
   if (testimonials.length === 0) return null;
 
-  function renderStars(rating: number) {
-    return "★".repeat(rating) + "☆".repeat(5 - rating);
-  }
-
   return (
     <section className="py-20 bg-ivory">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,7 +36,7 @@ export async function TestimonialsPreview() {
               key={i}
               className="bg-white rounded-2xl p-6 border border-sand/50 shadow-sm"
             >
-              <p className="text-terracotta text-sm mb-3">{renderStars(t.rating)}</p>
+              <StarRating rating={t.rating} className="mb-3" />
               <p className="text-warm-gray text-sm leading-relaxed mb-4 italic">
                 &ldquo;{t.content}&rdquo;
               </p>

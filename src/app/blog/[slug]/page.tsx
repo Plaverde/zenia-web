@@ -15,6 +15,13 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+function normalizeCategory(category: string) {
+  return category
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
 async function getPost(slug: string) {
   try {
     const post = await prisma.blog_posts.findUnique({
@@ -121,7 +128,7 @@ export default async function BlogPostPage({ params }: Props) {
             <MarkdownRenderer content={post.content} />
 
             {/* Emergency Banner */}
-            {(post.category === "ansiedad" || post.category === "depresión" || post.category === "crisis") && (
+            {["ansiedad", "depresion", "crisis"].includes(normalizeCategory(post.category)) && (
               <div className="mt-8">
                 <EmergencyBanner />
               </div>
@@ -129,7 +136,7 @@ export default async function BlogPostPage({ params }: Props) {
 
             {/* Disclaimer */}
             <BlogDisclaimer
-              includeEmergency={post.category === "depresión" || post.category === "crisis"}
+              includeEmergency={["depresion", "crisis"].includes(normalizeCategory(post.category))}
             />
 
             {/* CTA */}

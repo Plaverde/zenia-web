@@ -50,3 +50,6 @@ skills-lock.json
 
 # local test scripts with XAMPP credentials
 prisma/test-auth.js
+
+# generated seed SQL (contains password hash)
+prisma/seed-phase2-final.sql

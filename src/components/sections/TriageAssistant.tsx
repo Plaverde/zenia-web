@@ -9,18 +9,6 @@ import { Textarea } from "@/components/ui/Textarea";
 import { ConsentCheckbox } from "@/components/ui/ConsentCheckbox";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-const reasonOptions = [
-  { value: "", label: "Selecciona un motivo" },
-  { value: "ansiedad", label: "Ansiedad" },
-  { value: "depresion", label: "Depresión" },
-  { value: "estres", label: "Estrés" },
-  { value: "duelo", label: "Duelo" },
-  { value: "autoestima", label: "Autoestima" },
-  { value: "pareja", label: "Problemas de pareja" },
-  { value: "burnout", label: "Burnout / Agotamiento laboral" },
-  { value: "otro", label: "Otro" },
-];
-
 const modalityOptions = [
   { value: "", label: "Selecciona una opción" },
   { value: "presencial", label: "Presencial en Montería" },
@@ -57,7 +45,7 @@ export function TriageAssistant() {
           name: formData.get("name"),
           email: formData.get("email"),
           phone: formData.get("phone"),
-          message: `[Triage] Motivo: ${formData.get("reason")}. Edad: ${formData.get("age")}. Modalidad: ${formData.get("modality")}. ${formData.get("message") || ""}`,
+          message: (formData.get("message") as string) || "",
           consent,
         }),
       });
@@ -133,26 +121,6 @@ export function TriageAssistant() {
               label="Teléfono (opcional)"
               placeholder="Tu número"
               type="tel"
-            />
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <Select
-              id="reason"
-              name="reason"
-              label="Motivo de consulta"
-              options={reasonOptions}
-              required
-            />
-            <Input
-              id="age"
-              name="age"
-              label="Tu edad"
-              placeholder="Ej: 30"
-              type="number"
-              min={12}
-              max={100}
-              required
             />
           </div>
 

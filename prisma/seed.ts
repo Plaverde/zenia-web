@@ -200,7 +200,7 @@ Si reconoces varias de estas señales en ti mismo/a o en alguien cercano, el pri
 *Si quieres conversar sobre lo que estás sintiendo, puedes agendar una primera sesión sin compromiso. Estoy aquí para acompañarte.*`,
     },
     {
-      slug: "mindfulness-que-es",
+      slug: "mindfulness-que-no-es-que-puede-ser",
       title:
         "Mindfulness: qué no es y qué puede ser para ti",
       excerpt:
@@ -269,7 +269,7 @@ En mi práctica como psicóloga, integro el mindfulness como herramienta terapé
 *Si te interesa conocer más sobre cómo el mindfulness puede ayudarte en tu situación particular, puedes agendar una primera sesión para explorarlo juntos.*`,
     },
     {
-      slug: "terapia-act",
+      slug: "terapia-act-aceptar-para-no-quedarse-estancado",
       title: "Terapia ACT: aceptar para no quedarse estancado",
       excerpt:
         "La Terapia de Aceptación y Compromiso no te promete que el dolor desaparezca. Te enseña a construir una vida con sentido, aun cuando el dolor esté presente.",
