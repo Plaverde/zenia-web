@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
 export function Hero() {
@@ -26,6 +27,29 @@ export function Hero() {
                 Terapia Online
               </Button>
             </div>
+            <p className="mt-6">
+              <Link
+                href="/autoevaluacion"
+                className="inline-flex items-center gap-1.5 text-sage-dark font-medium hover:text-charcoal transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage rounded"
+              >
+                ¿Quieres entender cómo te sientes? Haz una autoevaluación
+                orientativa
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5 12h14M12 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </p>
           </div>
 
           {/* Image */}

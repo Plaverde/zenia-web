@@ -7,6 +7,7 @@ import { TriageAssistant } from "@/components/sections/TriageAssistant";
 import { AboutPreview } from "@/components/sections/AboutPreview";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { SpecialtiesGrid } from "@/components/sections/SpecialtiesGrid";
+import { SelfAssessmentSection } from "@/components/sections/SelfAssessmentSection";
 import { FirstSession } from "@/components/sections/FirstSession";
 import { TestimonialsPreview } from "@/components/sections/TestimonialsPreview";
 import { ArticlesPreview } from "@/components/sections/ArticlesPreview";
@@ -56,6 +57,7 @@ export default async function HomePage() {
         <TriageAssistant />
         <ServicesGrid />
         <SpecialtiesGrid />
+        <SelfAssessmentSection />
         <FirstSession />
         <TestimonialsPreview />
         <ArticlesPreview articles={articles} />
