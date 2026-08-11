@@ -75,6 +75,27 @@ export default function RecursosPage() {
               basado en evidencia científica.
             </p>
 
+            {/* Autoevaluación destacada */}
+            <div className="bg-white rounded-2xl p-8 md:p-10 border border-sand/50 mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="max-w-xl">
+                <span className="inline-block px-3 py-1 rounded-full bg-sage/10 text-sage-dark text-sm font-medium mb-4">
+                  Herramienta de autoconocimiento
+                </span>
+                <h3 className="font-serif text-2xl md:text-3xl text-charcoal mb-3">
+                  Autoevaluación de ansiedad y depresión
+                </h3>
+                <p className="text-warm-gray leading-relaxed">
+                  Cuestionarios orientativos PHQ-9 y GAD-7 para reflexionar sobre
+                  cómo te has sentido en las últimas dos semanas. Tus respuestas
+                  se calculan en tu dispositivo y no se guardan: el resultado es
+                  informativo y no constituye un diagnóstico.
+                </p>
+              </div>
+              <Button href="/autoevaluacion" size="lg" className="shrink-0">
+                Hacer la autoevaluación
+              </Button>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-8">
               {resourceCategories.map((category) => (
                 <div

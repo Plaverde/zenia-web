@@ -13,6 +13,7 @@ const navItems = [
   { href: "/terapia-online", label: "Terapia Online" },
   { href: "/tarifas", label: "Tarifas" },
   { href: "/recursos", label: "Recursos" },
+  { href: "/autoevaluacion", label: "Autoevaluación" },
   { href: "/contacto", label: "Contacto" },
 ];
 
