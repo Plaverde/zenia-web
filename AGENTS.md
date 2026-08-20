@@ -53,7 +53,7 @@ src/lib/constants.ts      # SITE (with [PLACEHOLDER]s), SERVICES, SPECIALTIES (1
 src/lib/rate-limit.ts     # Generic Map-based rate limiter
 src/lib/instruments/      # Immutable official PHQ-9/GAD-7 items + pure scoring (scorePhq9, scoreGad7, isSuicideRisk)
 src/lib/safety-resources.ts # Editable emergency lines per region (CO: 123, 106, 125)
-src/middleware.ts          # Auth guard using getToken() from next-auth/jwt (NOT the auth() wrapper)
+src/proxy.ts            # Auth guard using getToken() from next-auth/jwt (NOT the auth() wrapper)
 src/generated/prisma/     # Generated Prisma client
 prisma/schema.prisma      # 8 models, no relations between them
 ```
@@ -64,8 +64,8 @@ Admin routes under `/admin/`: login, dashboard stats, blog CRUD, citas, paciente
 
 ## Critical patterns
 
-### Middleware does NOT use auth() wrapper
-`src/middleware.ts` uses `getToken()` from `next-auth/jwt` directly. The `auth()` wrapper from NextAuth imports Prisma which uses `node:path`/`node:url` — these don't exist in Edge Runtime. Never change middleware back to `auth()` wrapper.
+### Proxy does NOT use auth() wrapper
+`src/proxy.ts` uses `getToken()` from `next-auth/jwt` directly. The `auth()` wrapper from NextAuth imports Prisma which uses `node:path`/`node:url` — these don't exist in Edge Runtime. Never change proxy back to `auth()` wrapper. (Next.js 16 convention: `middleware` was renamed to `proxy`; proxy runs on the Node.js runtime.)
 
 ### Admin fetch must check res.ok
 Every `fetch()` call in admin pages must check `res.ok` before calling `res.json()`. Without this, error responses (401, 500) get stored as data and `.map()` crashes:
@@ -112,7 +112,7 @@ All "Agendar"/"Reservar" CTAs point to `https://www.doctoralia.co/perfil/zenia-m
 
 - Rate limiting (Map-based, `src/lib/rate-limit.ts`): login 5 attempts/15 min per email; `/api/contact` and `/api/lead` 10 requests/15 min per IP.
 - Security headers in `next.config.ts`: X-Frame-Options DENY, X-Content-Type-Options nosniff, Referrer-Policy, X-XSS-Protection, Permissions-Policy.
-- Middleware role check: only `admin` role can access `/admin/*` and `/api/admin/*`.
+- Proxy role check: only `admin` role can access `/admin/*` and `/api/admin/*`.
 - Password must be re-seeded after deploy: `node scripts/seed-phase2.js`.
 
 ## Design System
