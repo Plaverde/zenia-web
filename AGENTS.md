@@ -12,7 +12,7 @@ Run all commands from this repo root (`zenia-web/`). The parent folder (`ZENIA A
 npm run dev          # Dev server (requires XAMPP MariaDB on port 3306)
 npm run build        # Production build (postbuild generates public/llms-full.txt)
 npx tsc --noEmit     # Typecheck (more reliable than lint — spaces in path break ESLint on Windows)
-npm run lint         # ESLint (may fail due to spaces in Windows path)
+npm run lint         # ESLint (flat config via eslint .)
 npm run db:push      # Push Prisma schema to MariaDB
 npm run db:seed      # Seed FAQ + blog posts (prisma/seed.ts via tsx)
 npm run db:studio    # Prisma Studio GUI

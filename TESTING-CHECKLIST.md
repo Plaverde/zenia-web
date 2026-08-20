@@ -10,8 +10,8 @@ raíz del repo (`zenia-web/`).
 npx tsc --noEmit
 ```
 - Debe terminar sin errores.
-- Más confiable que `npm run lint` (ESLint puede fallar por los espacios en la
-  ruta Windows del proyecto).
+- Más confiable que `npm run lint` (ESLint CLI sobre `next lint`, eliminado en
+  Next.js 16; `eslint .` usa la flat config).
 
 ### Pruebas unitarias / de flujo (vitest)
 ```bash
