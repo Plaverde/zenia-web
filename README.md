@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+> Último push: 2026-08-20
+
 ## Autoevaluación (`/autoevaluacion`)
 
 Self-screening flow for anxiety and depression (PHQ-9 / GAD-7) with local-only
