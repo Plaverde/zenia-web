@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-> Último push: 2026-08-20
+> Último push: 2026-08-21 15:21 (UTC-5)
 
 ## Autoevaluación (`/autoevaluacion`)
 
