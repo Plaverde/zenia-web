@@ -104,7 +104,7 @@ model blog_posts {
 model faq_items {
   id         Int       @id @default(autoincrement())
   question   String
-  answer     String
+  answer     String    @db.Text
   order      Int       @default(0)
   active     Boolean   @default(true)
   created_at DateTime  @default(now())

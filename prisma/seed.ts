@@ -42,7 +42,7 @@ async function main() {
     {
       question: "¿Cuál es el costo de la terapia?",
       answer:
-        "Los valores se confirman al agendar la primera cita. El costo varía según la modalidad (presencial o virtual) y la duración del tratamiento. No dudes en escribirme para recibir información actualizada.",
+        "La sesión individual tiene un valor de $149.900 COP en modalidad presencial y $139.900 COP en modalidad virtual. La sesión de pareja cuesta $179.900 COP. También ofrezco planes de acompañamiento de 4, 8 o 12 sesiones con descuentos del 10% al 20%. Puedes ver el detalle completo en la página de tarifas.",
       order: 4,
     },
     {
