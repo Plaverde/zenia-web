@@ -101,7 +101,7 @@ export default async function DashboardPage() {
       <Card className="p-6">
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-serif text-xl text-charcoal">
-            Citas Recientes
+            Citas recientes
           </h2>
           <Link
             href="/admin/citas"

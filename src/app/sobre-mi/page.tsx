@@ -43,7 +43,7 @@ export default function SobreMiPage() {
                   {/* Formación */}
                   <div>
                     <h2 className="font-serif text-2xl text-charcoal mb-4">
-                      Formación y Experiencia
+                      Formación y experiencia
                     </h2>
                     <ul className="space-y-3">
                       <li className="flex gap-3">
@@ -72,7 +72,7 @@ export default function SobreMiPage() {
                   {/* Filosofía */}
                   <div>
                     <h2 className="font-serif text-2xl text-charcoal mb-4">
-                      Mi Filosofía de Trabajo
+                      Mi filosofía de trabajo
                     </h2>
                     <div className="bg-sage/5 rounded-2xl p-6 border border-sage/20">
                       <p className="italic text-lg">
@@ -91,7 +91,7 @@ export default function SobreMiPage() {
                   {/* Enfoque */}
                   <div>
                     <h2 className="font-serif text-2xl text-charcoal mb-4">
-                      Mi Enfoque
+                      Mi enfoque
                     </h2>
                     <ul className="space-y-3">
                       <li className="flex gap-3">
@@ -120,7 +120,7 @@ export default function SobreMiPage() {
                   {/* Acreditación */}
                   <div className="bg-ivory rounded-2xl p-6 border border-sand">
                     <h3 className="font-serif text-xl text-charcoal mb-3">
-                      Acreditación y Habilitación
+                      Acreditación y habilitación
                     </h3>
                     <p className="text-sm">
                       {SITE.licenseInfo}. Como profesional de la salud, mantengo

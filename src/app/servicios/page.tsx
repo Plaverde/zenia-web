@@ -116,7 +116,7 @@ export default async function ServiciosPage() {
               las respuestas para empezar.
             </p>
             <Button href="https://www.doctoralia.co/perfil/zenia-maria-alvarez-gulfo" variant="secondary" size="lg">
-              Reservar Primera Sesión
+              Reservar primera sesión
             </Button>
           </div>
         </section>

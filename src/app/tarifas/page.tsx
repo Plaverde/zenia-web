@@ -22,7 +22,7 @@ export default function TarifasPage() {
             <div className="grid md:grid-cols-2 gap-8 mb-16">
               <div className="bg-white rounded-2xl p-8 border border-sand/50">
                 <h3 className="font-serif text-2xl text-charcoal mb-2">
-                  Sesión Individual
+                  Sesión individual
                 </h3>
                 <p className="text-warm-gray text-sm mb-4">
                   Terapia individual para adultos (50 minutos)
@@ -39,7 +39,7 @@ export default function TarifasPage() {
 
               <div className="bg-white rounded-2xl p-8 border border-sand/50">
                 <h3 className="font-serif text-2xl text-charcoal mb-2">
-                  Terapia de Pareja
+                  Terapia de pareja
                 </h3>
                 <p className="text-warm-gray text-sm mb-4">
                   Sesión para parejas (75 minutos)
@@ -58,7 +58,7 @@ export default function TarifasPage() {
             {/* Planes de acompañamiento */}
             <div className="bg-sage/5 rounded-2xl p-8 mb-16">
               <h3 className="font-serif text-2xl text-charcoal mb-4 text-center">
-                Planes de Acompañamiento
+                Planes de acompañamiento
               </h3>
               <p className="text-warm-gray text-center mb-6 max-w-2xl mx-auto">
                 Para quienes buscan continuidad en el proceso terapéutico. Los

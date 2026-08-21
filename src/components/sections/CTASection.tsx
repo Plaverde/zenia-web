@@ -13,7 +13,7 @@ export function CTASection() {
           acompañamiento tiene sentido para ti.
         </p>
         <Button href="https://www.doctoralia.co/perfil/zenia-maria-alvarez-gulfo" variant="secondary" size="lg">
-          Agendar Mi Primera Sesión
+          Agendar mi primera sesión
         </Button>
       </div>
     </section>

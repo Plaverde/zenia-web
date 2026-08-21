@@ -71,7 +71,7 @@ export async function ServicesGrid() {
 
         <div className="mt-12 text-center">
           <Button href="/servicios" variant="outline">
-            Ver Todos los Servicios
+            Ver todos los servicios
           </Button>
         </div>
       </div>

@@ -159,7 +159,7 @@ export default function RecursosPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/blog" variant="outline">
-                Ver Blog
+                Ver el blog
               </Button>
               <Button href="/contacto">
                 Contactar

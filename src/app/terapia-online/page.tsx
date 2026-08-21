@@ -37,7 +37,7 @@ export default function TerapiaOnlinePage() {
               elegir tu espacio.
             </p>
             <Button href="https://www.doctoralia.co/perfil/zenia-maria-alvarez-gulfo" size="lg">
-              Agendar sesión Online
+              Agendar sesión online
             </Button>
           </div>
         </section>
@@ -210,7 +210,7 @@ export default function TerapiaOnlinePage() {
               terapia online puede adaptarse a tu vida.
             </p>
             <Button href="https://www.doctoralia.co/perfil/zenia-maria-alvarez-gulfo" variant="secondary" size="lg">
-              Agendar sesión Online
+              Agendar sesión online
             </Button>
           </div>
         </section>

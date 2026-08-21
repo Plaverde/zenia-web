@@ -191,7 +191,7 @@ export default function TerminosDeUsoPage() {
               </p>
 
               <p className="text-warm-gray-light text-sm mt-8">
-                Última actualización: Julio 2026
+                Última actualización: julio de 2026
               </p>
             </div>
           </div>

@@ -23,7 +23,7 @@ export default function ConsentimientoInformadoPage() {
 
             <div className="bg-white rounded-2xl p-8 border border-sand/50 shadow-sm prose prose-lg max-w-none">
               <h2 className="font-serif text-2xl text-charcoal">
-                Consentimiento informado para Telepsicología
+                Consentimiento informado para telepsicología
               </h2>
 
               <p className="text-warm-gray">

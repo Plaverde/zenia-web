@@ -113,7 +113,7 @@ export default async function EspecialidadPage({ params }: Props) {
                 Agendar sesión
               </Button>
               <Button href="/especialidades" variant="outline" size="lg">
-                Ver Otras Especialidades
+                Ver otras especialidades
               </Button>
             </div>
           </div>

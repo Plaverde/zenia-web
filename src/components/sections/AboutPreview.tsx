@@ -39,7 +39,7 @@ export function AboutPreview() {
             </div>
             <div className="mt-8">
               <Button href="/sobre-mi" variant="outline">
-                Conocer Más Sobre mí
+                Conocer más sobre mí
               </Button>
             </div>
           </div>

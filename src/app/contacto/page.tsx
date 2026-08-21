@@ -98,7 +98,7 @@ export default function ContactoPage() {
                       </svg>
                     </div>
                     <h3 className="font-serif text-2xl text-charcoal mb-3">
-                      Mensaje Enviado
+                      Mensaje enviado
                     </h3>
                     <p className="text-warm-gray mb-6">
                       Gracias por escribirme. Te responderé lo antes posible.
@@ -107,7 +107,7 @@ export default function ContactoPage() {
                       onClick={() => setIsSubmitted(false)}
                       variant="outline"
                     >
-                      Enviar Otro Mensaje
+                      Enviar otro mensaje
                     </Button>
                   </div>
                 ) : (
@@ -173,7 +173,7 @@ export default function ContactoPage() {
               <div className="space-y-8">
                 <div>
                   <h3 className="font-serif text-2xl text-charcoal mb-4">
-                    Información de Contacto
+                    Información de contacto
                   </h3>
                   <div className="space-y-4 text-warm-gray">
                     <p className="flex items-start gap-3">
