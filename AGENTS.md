@@ -136,3 +136,13 @@ Colombian health data regulations (Ley 2460/2025, Ley 1616/2013) baked into comp
 - **Safety screen**: PHQ-9 item 9 > 0 triggers a crisis screen with emergency lines (123/106/125) before results.
 - **Orientative only**: results and copy always say "orientativo", never "diagnóstico" (Ley 2460/2025, no guaranteed results, no stigmatization).
 - The telepsicología `ConsentModal` was **removed** (file deleted from the working tree); consent is now handled inside the screening flow (`ConsentStep.tsx`). Rewire a modal only if a separate virtual-modality consent flow is restored.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

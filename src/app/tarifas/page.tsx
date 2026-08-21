@@ -27,8 +27,11 @@ export default function TarifasPage() {
                 <p className="text-warm-gray text-sm mb-4">
                   Terapia individual para adultos (50 minutos)
                 </p>
-                <p className="text-3xl font-bold text-sage-dark mb-4">
-                  Consultar valor
+                <p className="text-3xl font-bold text-sage-dark mb-1">
+                  $149.900 COP
+                </p>
+                <p className="text-sm text-warm-gray mb-4">
+                  $139.900 COP en modalidad virtual
                 </p>
                 <ul className="space-y-2 text-sm text-warm-gray list-disc list-inside">
                   <li>Presencial o virtual</li>
@@ -45,7 +48,7 @@ export default function TarifasPage() {
                   Sesión para parejas (75 minutos)
                 </p>
                 <p className="text-3xl font-bold text-sage-dark mb-4">
-                  Consultar valor
+                  $179.900 COP
                 </p>
                 <ul className="space-y-2 text-sm text-warm-gray list-disc list-inside">
                   <li>Presencial o virtual</li>
@@ -66,16 +69,22 @@ export default function TarifasPage() {
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { sessions: "4 sesiones", benefit: "Seguimiento cercano" },
-                  { sessions: "8 sesiones", benefit: "Continuidad terapéutica" },
-                  { sessions: "12 sesiones", benefit: "Proceso consolidado" },
+                  { sessions: "4 sesiones", discount: 10, benefit: "Seguimiento cercano" },
+                  { sessions: "8 sesiones", discount: 15, benefit: "Continuidad terapéutica" },
+                  { sessions: "12 sesiones", discount: 20, benefit: "Proceso consolidado" },
                 ].map((plan) => (
                   <div key={plan.sessions} className="bg-white rounded-xl p-6 text-center border border-sand/50">
                     <p className="font-medium text-charcoal mb-1">{plan.sessions}</p>
+                    <span className="inline-block px-3 py-1 rounded-full bg-terracotta/15 text-terracotta-dark text-sm font-semibold mb-2">
+                      {plan.discount}% de descuento
+                    </span>
                     <p className="text-sage-dark font-semibold">{plan.benefit}</p>
                   </div>
                 ))}
               </div>
+              <p className="text-warm-gray-light text-xs text-center mt-4">
+                Descuento aplicado sobre el valor de la sesión individual.
+              </p>
             </div>
 
             {/* Formas de pago */}
@@ -83,7 +92,7 @@ export default function TarifasPage() {
               <h3 className="font-serif text-2xl text-charcoal mb-4">
                 Formas de pago
               </h3>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-3 gap-4">
                 <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-sand/50">
                   <svg className="w-5 h-5 text-sage-dark flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
@@ -101,12 +110,6 @@ export default function TarifasPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                   <span className="text-warm-gray text-sm">Efectivo (presencial)</span>
-                </div>
-                <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-sand/50">
-                  <svg className="w-5 h-5 text-sage-dark flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                  </svg>
-                  <span className="text-warm-gray text-sm">Consultar valor según servicio</span>
                 </div>
               </div>
             </div>

@@ -1,71 +1,10 @@
-"use client";
-
-import { useState } from "react";
-import { toast } from "sonner";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/Input";
-import { Textarea } from "@/components/ui/Textarea";
-import { ConsentCheckbox } from "@/components/ui/ConsentCheckbox";
+import { ContactForm } from "@/components/ui/ContactForm";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SITE } from "@/lib/constants";
 
 export default function ContactoPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState("");
-  const [consent, setConsent] = useState(false);
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (!consent) {
-      setError("Debes aceptar el tratamiento de datos personales.");
-      toast.error("Consentimiento requerido", {
-        description:
-          "Debes aceptar el tratamiento de datos personales para continuar.",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-    setError("");
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.get("name"),
-          email: formData.get("email"),
-          phone: formData.get("phone"),
-          message: formData.get("message"),
-          consent,
-        }),
-      });
-
-      if (!res.ok) throw new Error("Error al enviar");
-
-      setIsSubmitted(true);
-      form.reset();
-      toast.success("Mensaje enviado", {
-        description:
-          "Gracias por escribirme. Te responderé lo antes posible.",
-      });
-    } catch {
-      setError("Hubo un error al enviar tu mensaje. Intenta de nuevo.");
-      toast.error("Error al enviar", {
-        description:
-          "Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  }
-
   return (
     <>
       <Header />
@@ -80,93 +19,14 @@ export default function ContactoPage() {
             <div className="grid md:grid-cols-2 gap-12">
               {/* Form */}
               <div>
-                {isSubmitted ? (
-                  <div className="bg-white rounded-2xl p-8 border border-sand/50 shadow-sm text-center">
-                    <div className="w-16 h-16 bg-sage/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg
-                        className="w-8 h-8 text-sage-dark"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <h3 className="font-serif text-2xl text-charcoal mb-3">
-                      Mensaje enviado
-                    </h3>
-                    <p className="text-warm-gray mb-6">
-                      Gracias por escribirme. Te responderé lo antes posible.
-                    </p>
-                    <Button
-                      onClick={() => setIsSubmitted(false)}
-                      variant="outline"
-                    >
-                      Enviar otro mensaje
-                    </Button>
-                  </div>
-                ) : (
-                  <form
-                    onSubmit={handleSubmit}
-                    className="bg-white rounded-2xl p-8 border border-sand/50 shadow-sm space-y-6"
-                  >
-                    <Input
-                      id="name"
-                      name="name"
-                      label="Nombre"
-                      placeholder="Tu nombre"
-                      required
-                    />
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <Input
-                        id="email"
-                        name="email"
-                        label="Correo electrónico"
-                        placeholder="tu@email.com"
-                        type="email"
-                        required
-                      />
-                      <Input
-                        id="phone"
-                        name="phone"
-                        label="Teléfono"
-                        placeholder="Tu teléfono"
-                        type="tel"
-                      />
-                    </div>
-
-                    <Textarea
-                      id="message"
-                      name="message"
-                      label="Mensaje"
-                      placeholder="¿En qué puedo ayudarte?"
-                      required
-                    />
-
-                    <ConsentCheckbox
-                      id="consent"
-                      checked={consent}
-                      onChange={setConsent}
-                      error={error && !consent ? error : undefined}
-                      label="Acepto el tratamiento de mis datos personales conforme a la Política de tratamiento de datos personales."
-                    />
-
-                    <Button
-                      type="submit"
-                      className="w-full"
-                      size="lg"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? "Enviando..." : "Enviar mensaje"}
-                    </Button>
-                  </form>
-                )}
+                <ContactForm
+                  idPrefix="contacto"
+                  messageRequired
+                  submitLabel="Enviar mensaje"
+                  consentLabel="Acepto el tratamiento de mis datos personales conforme a la Política de tratamiento de datos personales."
+                  successTitle="Mensaje enviado"
+                  successText="Gracias por escribirme. Te responderé lo antes posible."
+                />
               </div>
 
               {/* Info */}

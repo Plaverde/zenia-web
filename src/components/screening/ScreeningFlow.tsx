@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ScreeningIntro } from "./ScreeningIntro";
 import { ScaleSelect } from "./ScaleSelect";
 import { ConsentStep } from "./ConsentStep";
@@ -66,6 +66,14 @@ export function ScreeningFlow() {
   const [answers, setAnswers] =
     useState<Record<ScaleId, AnswersMap>>(EMPTY_ANSWERS);
   const [questions, setQuestions] = useState<FlatQuestion[]>([]);
+
+  // Cada paso reemplaza al anterior en el mismo lugar del árbol; sin este
+  // efecto, avanzar de pregunta deja el scroll donde estaba, ocultando la
+  // parte superior del siguiente paso (más notorio en móvil).
+  const stepIndex = "index" in step ? step.index : -1;
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [step.name, stepIndex]);
 
   const currentQuestion =
     step.name === "questions" ? questions[step.index] : null;
