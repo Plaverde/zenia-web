@@ -14,6 +14,7 @@ const navItems = [
   { href: "/tarifas", label: "Tarifas" },
   { href: "/recursos", label: "Recursos" },
   { href: "/autoevaluacion", label: "Autoevaluación" },
+  { href: "/faq", label: "Preguntas frecuentes" },
   { href: "/contacto", label: "Contacto" },
 ];
 
