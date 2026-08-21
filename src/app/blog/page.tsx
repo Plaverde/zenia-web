@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Artículos educativos sobre ansiedad, depresión, mindfulness y terapia ACT. Contenido para entender y cuidar tu salud mental.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 type BlogPost = {

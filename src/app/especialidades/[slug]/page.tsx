@@ -22,10 +22,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${specialty.title} | Terapia psicológica en Montería con Zenia Álvarez Gulfo`,
     description: specialty.summary,
+    alternates: {
+      canonical: `/especialidades/${slug}`,
+    },
     openGraph: {
       title: `${specialty.title} | Terapia psicológica en Montería`,
       description: specialty.summary,
       type: "article",
+      images: [
+        {
+          url: "/images/hero-zenia.webp",
+          width: 1200,
+          height: 630,
+          alt: specialty.title,
+        },
+      ],
     },
   };
 }

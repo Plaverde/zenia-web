@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Términos de uso",
   description:
     "Términos y condiciones de uso del sitio web de Zenia Álvarez Gulfo, psicóloga clínica en Montería.",
+  alternates: {
+    canonical: "/terminos-de-uso",
+  },
 };
 
 export default function TerminosDeUsoPage() {

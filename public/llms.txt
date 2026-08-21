@@ -5,22 +5,35 @@
 ## Servicios
 
 - [Servicios](https://zenia-web.vercel.app/servicios): Terapia individual, atención para ansiedad y depresión, presencial y virtual
-- [Reserva de Cita](https://zenia-web.vercel.app/reserva): Agenda tu primera sesión de terapia
+- [Tarifas y reserva de cita](https://zenia-web.vercel.app/tarifas): Valores del servicio y reserva de citas a través de Doctoralia
+- [Terapia online](https://zenia-web.vercel.app/terapia-online): Cómo funciona la terapia por videollamada
 
 ## Especialidades
 
+- [Especialidades](https://zenia-web.vercel.app/especialidades): Índice de todas las áreas de atención
 - [Ansiedad](https://zenia-web.vercel.app/especialidades/ansiedad): Manejo de síntomas de ansiedad con terapias de tercera generación
 - [Depresión](https://zenia-web.vercel.app/especialidades/depresion): Acompañamiento profesional para episodios depresivos
-- [Mindfulness](https://zenia-web.vercel.app/especialidades/mindfulness): Práctica de atención plena como herramienta terapéutica
-- [ACT](https://zenia-web.vercel.app/especialidades/act): Terapia de Aceptación y Compromiso
+- [Estrés](https://zenia-web.vercel.app/especialidades/estres): Gestión del estrés crónico
+- [Duelo](https://zenia-web.vercel.app/especialidades/duelo): Acompañamiento en procesos de pérdida
+- [Problemas de pareja](https://zenia-web.vercel.app/especialidades/pareja): Terapia de pareja
+- [Autoestima](https://zenia-web.vercel.app/especialidades/autoestima): Construcción de una autoestima sana
+- [Adolescencia](https://zenia-web.vercel.app/especialidades/adolescencia): Acompañamiento en la etapa adolescente
+- [Crianza](https://zenia-web.vercel.app/especialidades/crianza): Herramientas para la crianza
+- [Burnout](https://zenia-web.vercel.app/especialidades/burnout): Agotamiento profesional
+- [TDAH](https://zenia-web.vercel.app/especialidades/tdah): Atención para TDAH en adultos
+- [Trauma](https://zenia-web.vercel.app/especialidades/trauma): Acompañamiento en procesos de trauma
 
 ## Blog
 
 - [Blog](https://zenia-web.vercel.app/blog): Artículos educativos sobre salud mental
 - [¿Qué es la ansiedad?](https://zenia-web.vercel.app/blog/que-es-la-ansiedad): Guía para entender y manejar la ansiedad
-- [Señales de depresión](https://zenia-web.vercel.app/blog/senales-depresion): Cómo identificar un episodio depresivo
-- [Mindfulness](https://zenia-web.vercel.app/blog/mindfulness-que-es): Qué es y qué no es la práctica de atención plena
-- [Terapia ACT](https://zenia-web.vercel.app/blog/terapia-act): Aceptar para no quedarse estancado
+- [Señales de depresión](https://zenia-web.vercel.app/blog/senales-depresion-episodio): Cómo identificar un episodio depresivo
+- [Mindfulness: qué no es y qué puede ser](https://zenia-web.vercel.app/blog/mindfulness-que-no-es-que-puede-ser): Qué es y qué no es la práctica de atención plena
+- [Terapia ACT](https://zenia-web.vercel.app/blog/terapia-act-aceptar-para-no-quedarse-estancado): Aceptar para no quedarse estancado
+
+## Autoevaluación
+
+- [Autoevaluación PHQ-9 / GAD-7](https://zenia-web.vercel.app/autoevaluacion): Cuestionarios orientativos de ansiedad y depresión, sin registro de respuestas
 
 ## Sobre Mí
 
@@ -32,3 +45,9 @@
 
 - [Política de Datos](https://zenia-web.vercel.app/politica-datos): Tratamiento de datos personales
 - [Aviso de Privacidad](https://zenia-web.vercel.app/aviso-privacidad): Información sobre privacidad y confidencialidad
+- [Términos de Uso](https://zenia-web.vercel.app/terminos-de-uso): Términos y condiciones del sitio
+- [Derechos de las Personas](https://zenia-web.vercel.app/derechos-personas): Derechos en salud mental conforme a la Ley 2460 de 2025
+
+## Contenido completo
+
+- [llms-full.txt](https://zenia-web.vercel.app/llms-full.txt): Volcado de texto completo del sitio, generado automáticamente en cada despliegue

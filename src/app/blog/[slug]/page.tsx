@@ -55,11 +55,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description:
       post.meta_description ||
       post.excerpt,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
     openGraph: {
       title: post.meta_title || post.title,
       description: post.meta_description || post.excerpt,
       type: "article",
       publishedTime: post.published_at?.toISOString(),
+      images: [
+        {
+          url: post.featured_image || "/images/hero-zenia.webp",
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
   };
 }

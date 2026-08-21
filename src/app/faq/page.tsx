@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Preguntas frecuentes",
   description:
     "Respuestas a las preguntas más comunes sobre terapia psicológica, sesiones, costos y confidencialidad con Zenia Álvarez Gulfo.",
+  alternates: {
+    canonical: "/faq",
+  },
 };
 
 type FaqItem = {
@@ -36,6 +39,25 @@ export default async function FAQPage() {
 
   return (
     <>
+      {faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer,
+                },
+              })),
+            }),
+          }}
+        />
+      )}
       <Header />
       <main id="contenido" className="flex-1">
         <section className="py-20 bg-ivory">

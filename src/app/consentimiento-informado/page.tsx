@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Consentimiento informado para terapia online",
   description:
     "Consentimiento informado para el servicio de telepsicología con Zenia Álvarez Gulfo, conforme a la normativa vigente en Colombia.",
+  alternates: {
+    canonical: "/consentimiento-informado",
+  },
 };
 
 export default function ConsentimientoInformadoPage() {

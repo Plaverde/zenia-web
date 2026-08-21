@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Aviso de privacidad",
   description:
     "Aviso de privacidad del sitio web de Zenia Álvarez Gulfo, psicóloga clínica en Montería.",
+  alternates: {
+    canonical: "/aviso-privacidad",
+  },
 };
 
 export default function AvisoPrivacidadPage() {

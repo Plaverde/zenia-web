@@ -1,10 +1,17 @@
-"use client";
-
+import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { DoctoraliaWidget, DoctoraliaButton } from "@/components/DoctoraliaWidget";
+
+export const metadata: Metadata = {
+  title: "Tarifas",
+  description:
+    "Conoce las tarifas de terapia psicológica de Zenia Álvarez Gulfo en Montería: sesión individual, terapia de pareja y planes de acompañamiento, presencial o virtual.",
+  alternates: {
+    canonical: "/tarifas",
+  },
+};
 
 export default function TarifasPage() {
   return (

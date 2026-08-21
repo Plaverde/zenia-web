@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -13,6 +14,12 @@ import { TestimonialsPreview } from "@/components/sections/TestimonialsPreview";
 import { ArticlesPreview } from "@/components/sections/ArticlesPreview";
 import { CTASection } from "@/components/sections/CTASection";
 import { prisma } from "@/lib/db";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 type Article = {
   slug: string;

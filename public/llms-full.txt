@@ -1,62 +1,172 @@
-# Zenia Álvarez Gulfo — Psicóloga Clínica en Montería
+# Zenia Álvarez Gulfo — Psicóloga clínica en Montería
 
 > Acompañamiento psicológico profesional para ansiedad y depresión, con terapias de tercera generación como mindfulness y ACT, en Montería y modalidad virtual.
 
 ---
 
-## Inicio
-
-Acompañamiento psicológico profesional para ansiedad y depresión, con terapias de tercera generación como mindfulness y ACT, en Montería y modalidad virtual. Un espacio seguro para cuidar tu bienestar emocional.
-
----
-
-## Sobre Mí
-
-Soy psicóloga clínica con especialización en terapias de tercera generación. Mi enfoque se centra en ayudarte a desarrollar habilidades reales para manejar la ansiedad, la depresión y las dificultades emocionales de la vida cotidiana. Creo que la terapia no se trata de eliminarse el dolor, sino de aprender a vivir con mayor flexibilidad, sentido y conexión con lo que realmente importa para ti. Mi consultorio se encuentra en el centro de Montería, Córdoba, un ambiente cálido y privado diseñado para que te sientas cómodo/a. También ofrezco sesiones virtuales para quienes no pueden asistir presencialmente, manteniendo la misma calidad y confidencialidad.
-
----
-
 ## Servicios
 
-Terapia Individual para Adultos: Espacio seguro y confidencial para trabajar tu bienestar emocional a tu ritmo, con un enfoque humano y basado en evidencia. Atención Especializada en Ansiedad: Manejo de síntomas de ansiedad mediante terapias de tercera generación que te ayudan a recuperar el equilibrio emocional. Atención Especializada en Depresión: Acompañamiento profesional para superar episodios depresivos, reconstruir motivación y mejorar tu calidad de vida. Terapia Presencial en Montería: Sesiones en consultorio en el centro de la ciudad, en un ambiente cálido, privado y equipado para tu comodidad. Terapia Virtual (Videollamada): Atención profesional desde donde te encuentres, con la misma calidad y confidencialidad que una sesión presencial.
+### Terapia individual para adultos
+
+Un espacio seguro y confidencial para trabajar tu bienestar emocional a tu propio ritmo, con un enfoque humano, cercano y basado en evidencia.
+
+### Atención especializada en ansiedad
+
+Acompañamiento para entender y manejar la ansiedad desde terapias de tercera generación, como ACT y mindfulness, para que recuperes tu equilibrio poco a poco.
+
+### Atención especializada en depresión
+
+Espacio de contención para atravesar episodios depresivos, reconstruir la motivación y encontrar de nuevo espacios de bienestar.
+
+### Terapia presencial en Montería
+
+Sesiones en consultorio ubicado en el centro de Montería, en un ambiente cálido, privado y pensado para tu comodidad.
+
+### Terapia virtual (videollamada)
+
+Atención profesional desde donde te encuentres, con la misma calidad, confidencialidad y cuidado que una sesión presencial.
 
 ---
 
 ## Especialidades
 
-Ansiedad: La ansiedad no es tu enemiga. Es una señal que tu cuerpo y mente envían cuando algo necesita atención. Aprender a escucharla sin dejarte dominar es el primer paso hacia el equilibrio. Depresión: Pedir ayuda cuando todo se siente pesado no es debilidad, es valentía. La depresión tiene tratamiento y no estás solo/a en este proceso. Mindfulness: Mindfulness no es 'no pensar'. Es una práctica de atención plena que te permite observar tus pensamientos y emociones sin reaccionar automáticamente ante ellos. Terapia ACT: ACT no te promete que el dolor desaparecerá. Te enseña a construir una vida con sentido aun cuando el dolor esté presente.
+### Ansiedad
+
+La ansiedad no es tu enemiga. Es una señal que tu cuerpo y mente envían cuando algo necesita atención. Aprender a escucharla sin dejarte dominar es el primer paso hacia el equilibrio.
+
+https://zenia-web.vercel.app/especialidades/ansiedad
+
+### Depresión
+
+Pedir ayuda cuando todo se siente pesado no es debilidad, es valentía. La depresión tiene tratamiento y no estás solo/a en este proceso.
+
+https://zenia-web.vercel.app/especialidades/depresion
+
+### Estrés
+
+El estrés crónico no es normal. Si sientes que siempre estás en modo supervivencia, es momento de recuperar el control de tu vida.
+
+https://zenia-web.vercel.app/especialidades/estres
+
+### Duelo
+
+El duelo no tiene un camino lineal. Cada persona necesita su propio proceso y tiempo para adaptarse a la pérdida.
+
+https://zenia-web.vercel.app/especialidades/duelo
+
+### Problemas de pareja
+
+Las relaciones no son perfectas, pero sí pueden ser sanas. Si la distancia, los conflictos o la incomodidad dominan tu relación, hay caminos para recuperar la conexión.
+
+https://zenia-web.vercel.app/especialidades/pareja
+
+### Autoestima
+
+La forma en que te hablas a ti mismo/a define cómo vives. Construir una autoestima sana es posible, incluso cuando parece imposible.
+
+https://zenia-web.vercel.app/especialidades/autoestima
+
+### Adolescencia
+
+La adolescencia es una etapa de cambios intensos. Acompañar a un adolescente en su proceso de construcción de identidad es fundamental.
+
+https://zenia-web.vercel.app/especialidades/adolescencia
+
+### Crianza
+
+Ser padre o madre no tiene manual. Si sientes dudas, frustración o agotamiento en tu rol parental, no estás solo/a.
+
+https://zenia-web.vercel.app/especialidades/crianza
+
+### Burnout
+
+El agotamiento profesional no es un signo de debilidad. Es una señal de que algo en tu relación con el trabajo necesita cambiar.
+
+https://zenia-web.vercel.app/especialidades/burnout
+
+### TDAH
+
+El TDAH no es falta de voluntad. Es una diferencia neurológica que requiere comprensión, herramientas y acompañamiento adecuado.
+
+https://zenia-web.vercel.app/especialidades/tdah
+
+### Trauma
+
+El trauma no define quién eres. Con el acompañamiento adecuado, es posible sanar y reconstruir tu sentido de seguridad y confianza.
+
+https://zenia-web.vercel.app/especialidades/trauma
 
 ---
 
-## Blog: ¿Qué es la ansiedad?
+## Blog
 
-La ansiedad es una respuesta natural de tu cuerpo ante situaciones percibidas como amenazantes o inciertas. En pequeñas dosis, la ansiedad es útil: te mantiene alerta, te prepara para actuar y puede incluso salvarte de situaciones peligrosas. El problema surge cuando la ansiedad se vuelve desproporcionada, constante o aparece sin una razón aparente. Puede manifestarse en el cuerpo (tensión muscular, palpitaciones, sudoración), en los pensamientos (preocupación constante, anticipación de peores escenarios) y en el comportamiento (evitación de situaciones, inquietud). La ansiedad tiene tratamiento y responde muy bien al acompañamiento profesional.
+### Terapia ACT: aceptar para no quedarse estancado
+
+https://zenia-web.vercel.app/blog/terapia-act-aceptar-para-no-quedarse-estancado
+
+La Terapia ACT no busca eliminar el dolor. Enseña a construir una vida con sentido aun cuando el dolor este presente. Conoce cómo funciona.
+
+### Mindfulness: qué no es y qué puede ser para ti
+
+https://zenia-web.vercel.app/blog/mindfulness-que-no-es-que-puede-ser
+
+Mindfulness no es "no pensar". Descubre qué dice la ciencia sobre la atención plena, sus beneficios reales y cómo incorporarla en tu vida cotidiana.
+
+### Señales de que podrías estar atravesando un episodio depresivo
+
+https://zenia-web.vercel.app/blog/senales-depresion-episodio
+
+La depresión es un trastorno que va mucho más allá de la tristeza común. Conoce sus señales principales y cuándo es momento de buscar ayuda profesional.
+
+### ¿Qué es la ansiedad y cómo puedes empezar a manejarla?
+
+https://zenia-web.vercel.app/blog/que-es-la-ansiedad
+
+Entender la ansiedad es el primer paso para dejar de sentir que te controla.
 
 ---
 
-## Blog: Señales de depresión
+## Preguntas frecuentes
 
-Muchas personas asocian la depresión con tristeza profunda y llanto constante, pero la realidad es que la depresión puede manifestarse de maneras mucho más sutiles. Las señales incluyen pérdida de interés o placer (anhedonia), cansancio inexplicable, dificultad para concentrarse, cambios en el sueño, cambios en el apetito, aislamiento social, y sentimientos de vacío o desesperanza. La depresión es una condición de salud, no una debilidad de carácter, y tiene tratamiento profesional efectivo.
+**¿Cómo sé si necesito terapia psicológica?**
 
----
+Si sientes que tus emociones interfieren con tu vida diaria, relaciones, trabajo o bienestar general, la terapia puede ayudarte. No necesitas estar en una crisis para buscar acompañamiento profesional. Muchas personas inician terapia simplemente porque quieren conocerse mejor y mejorar su calidad de vida.
 
-## Blog: Mindfulness
+**¿Cuánto dura cada sesión?**
 
-El mindfulness no es "no pensar", no es solo relajación, no es una religión, y no es algo que solo hagan monjes. Mindfulness es la práctica de dirigir la atención al momento presente de manera intencional, sin juicio y con curiosidad. Sus tres pilares son: atención al momento presente, sin juicio, y con curiosidad. La investigación ha demostrado que la práctica regular produce cambios medibles en el cerebro: reduce la actividad de la amígdala, fortalece la corteza prefrontal, reduce los niveles de cortisol y mejora la atención sostenida.
+Las sesiones tienen una duración de 50 minutos. Este tiempo permite un espacio suficiente para trabajar de manera profunda sin sobrecargarte emocionalmente.
 
----
+**¿Atiendes de manera virtual?**
 
-## Blog: Terapia ACT
+Sí. Ofrezco terapia virtual por videollamada para personas que no pueden asistir al consultorio o que prefieren la comodidad de su hogar. La confidencialidad y la calidad de la atención se mantienen en ambas modalidades.
 
-La Terapia de Aceptación y Compromiso (ACT) combina mindfulness con compromiso orientado a valores. Sus seis procesos fundamentales son: aceptación, defusión cognitiva, contacto con el momento presente, yo como contexto, valores y acción comprometida. La ACT es efectiva para ansiedad, depresión, dolor crónico, estrés y procrastinación. A diferencia de la terapia cognitivo-conductual tradicional, la ACT busca cambiar la relación que tienes con tus pensamientos, no el contenido de los pensamientos.
+**¿Cuál es el costo de la terapia?**
+
+Los valores se confirman al agendar la primera cita. El costo varía según la modalidad (presencial o virtual) y la duración del tratamiento. No dudes en escribirme para recibir información actualizada.
+
+**¿Qué debo traer a mi primera sesión?**
+
+No necesitas preparar nada especial. Solo necesitas llegar con la disposición de hablar y ser escuchado/a. Si lo deseas, puedes escribir previamente las razones que te llevaron a buscar terapia o las situaciones que te gustaría abordar.
+
+**¿La información que comparto es confidencial?**
+
+Sí. Todo lo que compartas en terapia es estrictamente confidencial, conforme a las normas éticas y legales de la psicología en Colombia. Tu información personal y clínica está protegida por la Ley 1581 de 2012 sobre protección de datos personales sensibles.
+
+**¿Puedo agendar una sesión de prueba?**
+
+La primera sesión funciona como una sesión de evaluación inicial. En ella podremos conocernos, entender tu situación y decidir juntos si el enfoque terapéutico es adecuado para ti. No hay compromiso de continuar si no te sientes cómodo/a.
+
+**¿Trabajas con niños o adolescentes?**
+
+Mi enfoque principal es la atención de adultos. Si necesitas apoyo para niños o adolescentes, puedo recomendarte colegas especializados en población infantojuvenil.
 
 ---
 
 ## Contacto
 
 - Dirección: Cra 19 #10-25 Centro, Montería, Córdoba, Colombia
-- WhatsApp: disponible para agendar citas
-- Formulario de contacto: disponible en el sitio web
+- Formulario de contacto: https://zenia-web.vercel.app/contacto
+- Tarifas y reserva de cita: https://zenia-web.vercel.app/tarifas
 
 ## Legal
 

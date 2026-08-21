@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Terapia online",
   description:
     "Conoce cómo funciona la terapia online con Zenia Álvarez Gulfo. Sesiones por videollamada segura con la misma calidad y confidencialidad que una sesión presencial.",
+  alternates: {
+    canonical: "/terapia-online",
+  },
 };
 
 const checklist = [

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Servicios",
   description:
     "Conoce los servicios de terapia psicológica de Zenia Álvarez Gulfo: terapia individual, atención para ansiedad y depresión, presencial y virtual en Montería.",
+  alternates: {
+    canonical: "/servicios",
+  },
 };
 
 async function getServices() {

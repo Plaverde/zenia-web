@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Derechos de las personas en salud mental",
   description:
     "Conoce tus derechos como persona en el ámbito de la salud mental, conforme a la Ley 2460 de 2025 en Colombia.",
+  alternates: {
+    canonical: "/derechos-personas",
+  },
 };
 
 const derechos = [

@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SITE } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: "Contacto",
+  description:
+    "Escríbeme para agendar una cita o resolver tus dudas. Consultorio en el centro de Montería, atención presencial y virtual.",
+  alternates: {
+    canonical: "/contacto",
+  },
+};
 
 export default function ContactoPage() {
   return (

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Sobre mí",
   description:
     "Conoce a Zenia Álvarez Gulfo, psicóloga clínica en Montería, Córdoba. Especialista en ansiedad y depresión con terapias de tercera generación.",
+  alternates: {
+    canonical: "/sobre-mi",
+  },
 };
 
 export default function SobreMiPage() {

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Política de tratamiento de datos personales",
   description:
     "Conoce cómo Zenia Álvarez Gulfo trata y protege tus datos personales conforme a la Ley 1581 de 2012 de Colombia.",
+  alternates: {
+    canonical: "/politica-datos",
+  },
 };
 
 export default function PoliticaDatosPage() {

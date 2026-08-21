@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Recursos",
   description:
     "Recursos educativos de psicología: artículos, guías, ejercicios y meditaciones para cuidar tu salud mental.",
+  alternates: {
+    canonical: "/recursos",
+  },
 };
 
 const resourceCategories = [

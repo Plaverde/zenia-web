@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Especialidades",
   description:
     "Conoce las especialidades de Zenia Álvarez Gulfo: ansiedad, depresión, estrés, duelo, autoestima, terapia de pareja y más. Enfoques basados en evidencia científica.",
+  alternates: {
+    canonical: "/especialidades",
+  },
 };
 
 export default function EspecialidadesPage() {
