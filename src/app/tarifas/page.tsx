@@ -10,11 +10,11 @@ export default function TarifasPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         {/* Tarifas */}
         <section className="py-20 bg-ivory">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeading
+            <SectionHeading as="h1"
               title="Tarifas"
               subtitle="Transparencia en los valores del servicio psicológico"
             />

@@ -55,10 +55,10 @@ export default async function ServiciosPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         <section className="py-20 bg-ivory">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeading
+            <SectionHeading as="h1"
               title="Servicios"
               subtitle="Acompañamiento profesional adaptado a tus necesidades. Cada servicio es un espacio seguro para trabajar tu bienestar emocional."
             />
@@ -96,7 +96,7 @@ export default async function ServiciosPage() {
                     </ul>
                   )}
                   <Button href="https://www.doctoralia.co/perfil/zenia-maria-alvarez-gulfo" variant="outline" size="sm">
-                    Agendar Sesión
+                    Agendar sesión
                   </Button>
                 </div>
               ))}

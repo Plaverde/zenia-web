@@ -69,10 +69,10 @@ export default function ContactoPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         <section className="py-20 bg-ivory">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeading
+            <SectionHeading as="h1"
               title="Contacto"
               subtitle="Escríbeme para agendar una cita o resolver tus dudas"
             />
@@ -154,7 +154,7 @@ export default function ContactoPage() {
                       checked={consent}
                       onChange={setConsent}
                       error={error && !consent ? error : undefined}
-                      label="Acepto el tratamiento de mis datos personales conforme a la Política de Tratamiento de Datos Personales."
+                      label="Acepto el tratamiento de mis datos personales conforme a la Política de tratamiento de datos personales."
                     />
 
                     <Button
@@ -163,7 +163,7 @@ export default function ContactoPage() {
                       size="lg"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+                      {isSubmitting ? "Enviando..." : "Enviar mensaje"}
                     </Button>
                   </form>
                 )}

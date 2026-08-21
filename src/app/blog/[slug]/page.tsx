@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         <article className="py-20 bg-ivory">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Breadcrumb */}
@@ -148,7 +148,7 @@ export default async function BlogPostPage({ params }: Props) {
                 Si quieres conversar sobre lo que estás sintiendo, puedo
                 acompañarte.
               </p>
-              <Button href="https://www.doctoralia.co/perfil/zenia-maria-alvarez-gulfo">Agendar Primera Sesión</Button>
+              <Button href="https://www.doctoralia.co/perfil/zenia-maria-alvarez-gulfo">Agendar primera sesión</Button>
             </div>
 
             {/* Back to blog */}

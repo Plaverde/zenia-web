@@ -6,7 +6,7 @@ const DOCTORALIA_URL = "https://www.doctoralia.co/perfil/zenia-maria-alvarez-gul
 const footerLinks = {
   servicios: [
     { href: "/especialidades", label: "Especialidades" },
-    { href: "/terapia-online", label: "Terapia Online" },
+    { href: "/terapia-online", label: "Terapia online" },
     { href: "/tarifas", label: "Tarifas" },
   ],
   información: [
@@ -37,7 +37,7 @@ export function Footer() {
               {SITE.name}
             </Link>
             <p className="text-warm-gray-light text-sm leading-relaxed mb-4">
-              Psicóloga Clínica en Montería, Córdoba. Especialista en ansiedad y
+              Psicóloga clínica en Montería, Córdoba. Especialista en ansiedad y
               depresión con terapias de tercera generación.
             </p>
             <p className="text-warm-gray-light text-sm mb-2">
@@ -141,10 +141,10 @@ export function Footer() {
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div>
               <h4 className="text-white text-sm font-medium mb-2">
-                Identificación Legal
+                Identificación legal
               </h4>
               <p className="text-warm-gray-light text-xs leading-relaxed">
-                {SITE.name} · {SITE.profession}
+                {SITE.name}, {SITE.profession}
                 <br />
                 NIT/DNI: [NIT_O_DNI]
                 <br />
@@ -157,7 +157,7 @@ export function Footer() {
             </div>
             <div>
               <h4 className="text-white text-sm font-medium mb-2">
-                Derechos y Deberes del Paciente
+                Derechos y deberes del paciente
               </h4>
               <p className="text-warm-gray-light text-xs leading-relaxed">
                 Conforme a la{" "}
@@ -178,7 +178,7 @@ export function Footer() {
               Emergencias de salud mental
             </p>
             <p className="text-warm-gray-light text-xs">
-              Línea 106 (Salud Mental) · Línea 123 (Línea de la Vida) · SAMU 125
+              Línea 106 (Salud Mental), Línea 123 (Línea de la Vida) y SAMU 125
             </p>
           </div>
           <p className="text-warm-gray-light text-sm text-center">

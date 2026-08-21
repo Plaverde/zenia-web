@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Términos de Uso",
+  title: "Términos de uso",
   description:
     "Términos y condiciones de uso del sitio web de Zenia Álvarez Gulfo, psicóloga clínica en Montería.",
 };
@@ -12,11 +12,11 @@ export default function TerminosDeUsoPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         <section className="py-20 bg-ivory">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="font-serif text-4xl text-charcoal mb-8">
-              Términos de Uso
+              Términos de uso
             </h1>
 
             <div className="prose prose-lg max-w-none text-warm-gray leading-relaxed space-y-6">
@@ -136,11 +136,11 @@ export default function TerminosDeUsoPage() {
               <p>
                 El tratamiento de sus datos personales se rige por nuestra{" "}
                 <a href="/politica-datos" className="text-sage-dark hover:text-charcoal underline underline-offset-2">
-                  Política de Tratamiento de Datos Personales
+                  Política de tratamiento de datos personales
                 </a>{" "}
                 y nuestro{" "}
                 <a href="/aviso-privacidad" className="text-sage-dark hover:text-charcoal underline underline-offset-2">
-                  Aviso de Privacidad
+                  Aviso de privacidad
                 </a>
                 , en cumplimiento de la Ley 1581 de 2012 y la Ley 2460 de 2025.
               </p>

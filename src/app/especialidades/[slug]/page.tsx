@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!specialty) return {};
 
   return {
-    title: `${specialty.title} | Terapia psicológica en Montería — Zenia Álvarez Gulfo`,
+    title: `${specialty.title} | Terapia psicológica en Montería con Zenia Álvarez Gulfo`,
     description: specialty.summary,
     openGraph: {
       title: `${specialty.title} | Terapia psicológica en Montería`,
@@ -41,7 +41,7 @@ export default async function EspecialidadPage({ params }: Props) {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         <section className="py-20 bg-ivory">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-sage-dark font-medium mb-2">Especialidad</p>
@@ -110,7 +110,7 @@ export default async function EspecialidadPage({ params }: Props) {
 
             <div className="mt-12 flex flex-col sm:flex-row gap-4">
               <Button href="https://www.doctoralia.co/perfil/zenia-maria-alvarez-gulfo" size="lg">
-                Agendar Sesión
+                Agendar sesión
               </Button>
               <Button href="/especialidades" variant="outline" size="lg">
                 Ver Otras Especialidades

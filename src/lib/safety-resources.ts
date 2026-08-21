@@ -15,8 +15,8 @@ export const SAFETY_RESOURCES: EmergencyResource[] = [
     region: "CO",
     label: "Colombia",
     numbers: [
-      { label: "Línea 123 — Emergencias", value: "123", tel: "123" },
-      { label: "Línea 106 — Salud Mental", value: "106", tel: "106" },
+      { label: "Línea 123 (Emergencias)", value: "123", tel: "123" },
+      { label: "Línea 106 (Salud Mental)", value: "106", tel: "106" },
       { label: "SAMU 125", value: "125", tel: "125" },
     ],
     note: "Las líneas territoriales vigentes pueden variar; el profesional debe actualizar este archivo según su ciudad y país.",

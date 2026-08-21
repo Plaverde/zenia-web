@@ -87,7 +87,7 @@ export default function FAQAdminPage() {
 
       {showNew && (
         <Card className="p-6 mb-6">
-          <h3 className="font-medium text-charcoal mb-4">Nueva Pregunta</h3>
+          <h3 className="font-medium text-charcoal mb-4">Nueva pregunta</h3>
           <FAQForm
             onSave={saveFaq}
             onCancel={() => setShowNew(false)}

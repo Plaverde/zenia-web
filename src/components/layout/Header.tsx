@@ -10,7 +10,7 @@ const DOCTORALIA_URL = "https://www.doctoralia.co/perfil/zenia-maria-alvarez-gul
 const navItems = [
   { href: "/sobre-mi", label: "Sobre mí" },
   { href: "/especialidades", label: "Especialidades" },
-  { href: "/terapia-online", label: "Terapia Online" },
+  { href: "/terapia-online", label: "Terapia online" },
   { href: "/tarifas", label: "Tarifas" },
   { href: "/recursos", label: "Recursos" },
   { href: "/autoevaluacion", label: "Autoevaluación" },
@@ -49,7 +49,7 @@ export function Header() {
           {/* CTA + Mobile Menu Button */}
           <div className="flex items-center gap-4">
             <Button href={DOCTORALIA_URL} size="sm" className="hidden sm:inline-flex">
-              Agendar Sesión
+              Agendar sesión
             </Button>
 
             {/* Mobile Menu Button */}
@@ -112,7 +112,7 @@ export function Header() {
               ))}
               <li className="px-4 pt-2">
                 <Button href={DOCTORALIA_URL} className="w-full">
-                  Agendar Sesión
+                  Agendar sesión
                 </Button>
               </li>
             </ul>
@@ -127,7 +127,7 @@ export function Header() {
         <div className="flex items-stretch gap-1.5">
           <Link
             href="/autoevaluacion"
-            className="flex-1 flex flex-col items-center justify-center gap-0.5 min-h-[52px] rounded-lg text-sage-dark hover:bg-sage/10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
+            className="flex-1 flex flex-col items-center justify-center gap-0.5 min-h-[52px] rounded-lg text-sage-dark hover:bg-sage/10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-dark"
           >
             <svg
               className="w-5 h-5"
@@ -149,7 +149,7 @@ export function Header() {
             href={`https://wa.me/${SITE.phone}?text=${encodeURIComponent(SITE.whatsappMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex flex-col items-center justify-center gap-0.5 min-h-[52px] rounded-lg text-sage-dark hover:bg-sage/10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
+            className="flex-1 flex flex-col items-center justify-center gap-0.5 min-h-[52px] rounded-lg text-sage-dark hover:bg-sage/10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-dark"
           >
             <svg
               className="w-5 h-5"
@@ -169,7 +169,7 @@ export function Header() {
             href={DOCTORALIA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex flex-col items-center justify-center gap-0.5 min-h-[52px] rounded-lg bg-sage-dark text-white hover:bg-sage transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
+            className="flex-1 flex flex-col items-center justify-center gap-0.5 min-h-[52px] rounded-lg bg-sage-dark text-white hover:bg-terracotta-dark transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-dark"
           >
             <svg
               className="w-5 h-5"

@@ -38,7 +38,7 @@ export async function TestimonialsPreview() {
             >
               <StarRating rating={t.rating} className="mb-3" />
               <p className="text-warm-gray text-sm leading-relaxed mb-4 italic">
-                &ldquo;{t.content}&rdquo;
+                «{t.content}»
               </p>
               <p className="text-charcoal font-medium text-sm">{t.patient_name}</p>
             </div>

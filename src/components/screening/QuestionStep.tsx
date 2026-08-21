@@ -40,6 +40,12 @@ export function QuestionStep({
     <section className="py-16 bg-ivory">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl p-8 md:p-10 border border-sand/50 shadow-sm">
+          {/* Encabezado de página para lectores de pantalla: cada paso del
+              flujo debe exponer un h1 aunque la pregunta use <legend>. */}
+          <h1 className="sr-only">
+            Autoevaluación: {instrument.title}
+          </h1>
+
           <div className="flex items-center justify-between mb-4">
             <span className="text-sm font-medium text-sage-dark">
               {instrument.shortTitle}

@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Consentimiento Informado - Terapia Online",
+  title: "Consentimiento informado para terapia online",
   description:
     "Consentimiento informado para el servicio de telepsicología con Zenia Álvarez Gulfo, conforme a la normativa vigente en Colombia.",
 };
@@ -13,23 +13,23 @@ export default function ConsentimientoInformadoPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         <section className="py-20 bg-ivory">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              title="Consentimiento Informado"
-              subtitle="Terapia Online / Telepsicología"
+            <SectionHeading as="h1"
+              title="Consentimiento informado"
+              subtitle="Terapia online y telepsicología"
             />
 
             <div className="bg-white rounded-2xl p-8 border border-sand/50 shadow-sm prose prose-lg max-w-none">
               <h2 className="font-serif text-2xl text-charcoal">
-                Consentimiento Informado para Telepsicología
+                Consentimiento informado para Telepsicología
               </h2>
 
               <p className="text-warm-gray">
                 El presente documento establece los términos y condiciones del servicio
                 de atención psicológica a distancia (telepsicología) ofrecido por
-                <strong> Zenia Álvarez Gulfo</strong>,Psicóloga Clínica.
+                <strong> Zenia Álvarez Gulfo</strong>, psicóloga clínica.
               </p>
 
               <h3 className="font-serif text-xl text-charcoal">

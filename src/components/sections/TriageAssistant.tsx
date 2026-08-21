@@ -144,7 +144,7 @@ export function TriageAssistant() {
             checked={consent}
             onChange={(val) => { setConsent(val); setConsentError(""); }}
             error={consentError || undefined}
-            label="Acepto el tratamiento de mis datos personales conforme a la Política de Tratamiento de Datos Personales. Mis datos serán utilizados únicamente para gestionar mi consulta y no serán compartidos con terceros."
+            label="Acepto el tratamiento de mis datos personales conforme a la Política de tratamiento de datos personales. Mis datos serán utilizados únicamente para gestionar mi consulta y no serán compartidos con terceros."
           />
 
           <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>

@@ -9,33 +9,56 @@ export function Hero() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text */}
           <div className="max-w-xl">
-            <p className="text-sage-dark font-medium mb-4">Psicóloga Clínica en Montería</p>
+            <p className="text-sage-dark font-medium mb-4">Psicóloga clínica en Montería</p>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-charcoal mb-6 leading-tight">
               Acompañamiento psicológico para ansiedad y depresión
             </h1>
             <p className="text-lg md:text-xl text-warm-gray mb-8 leading-relaxed">
-              Terapias de tercera generación — ACT y mindfulness — para personas
+              Terapias de tercera generación, como ACT y mindfulness, para personas
               en Montería y modalidad virtual. Un espacio seguro donde explorar
               lo que sientes y construir herramientas concretas para tu bienestar
               emocional.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button href="https://www.doctoralia.co/perfil/zenia-maria-alvarez-gulfo" size="lg">
-                Agendar Primera Sesión
+                Agendar primera sesión
               </Button>
               <Button href="/terapia-online" variant="outline" size="lg">
-                Terapia Online
+                Terapia online
               </Button>
             </div>
-            <p className="mt-6">
-              <Link
-                href="/autoevaluacion"
-                className="inline-flex items-center gap-1.5 text-sage-dark font-medium hover:text-charcoal transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage rounded"
-              >
-                ¿Quieres entender cómo te sientes? Haz una autoevaluación
-                orientativa
+            {/* Invitación a la autoevaluación: tarjeta de bajo peso visual,
+                por debajo de los dos CTA principales en la jerarquía. */}
+            <Link
+              href="/autoevaluacion"
+              className="group mt-8 flex max-w-md items-stretch overflow-hidden rounded-xl border border-sand bg-sand-light transition-colors hover:border-terracotta-dark/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-dark"
+            >
+              <span className="w-1 shrink-0 bg-terracotta-dark" aria-hidden="true" />
+              <span className="flex flex-1 items-center gap-4 px-4 py-3.5">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-terracotta-dark text-white">
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    aria-hidden="true"
+                  >
+                    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+                    <rect x="9" y="3" width="6" height="4" rx="1" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m9 14 2 2 4-4" />
+                  </svg>
+                </span>
+                <span className="flex-1">
+                  <span className="block font-medium text-charcoal">
+                    ¿Cómo te sientes últimamente?
+                  </span>
+                  <span className="block text-sm text-warm-gray">
+                    2 minutos, anónimo, sin registro
+                  </span>
+                </span>
                 <svg
-                  className="w-4 h-4"
+                  className="h-5 w-5 shrink-0 text-terracotta-dark transition-transform group-hover:translate-x-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -48,8 +71,8 @@ export function Hero() {
                     d="M5 12h14M12 5l7 7-7 7"
                   />
                 </svg>
-              </Link>
-            </p>
+              </span>
+            </Link>
           </div>
 
           {/* Image */}

@@ -80,7 +80,7 @@ export default function PacientesPage() {
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
-        <h1 className="font-serif text-3xl text-charcoal">Gestión de Pacientes</h1>
+        <h1 className="font-serif text-3xl text-charcoal">Gestión de pacientes</h1>
         <div className="w-48">
           <Select
             id="filter"

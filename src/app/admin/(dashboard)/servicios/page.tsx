@@ -84,15 +84,15 @@ export default function ServiciosAdminPage() {
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
-        <h1 className="font-serif text-3xl text-charcoal">Gestión de Servicios</h1>
+        <h1 className="font-serif text-3xl text-charcoal">Gestión de servicios</h1>
         <Button variant="primary" onClick={() => setShowNew(true)}>
-          Nuevo Servicio
+          Nuevo servicio
         </Button>
       </div>
 
       {showNew && (
         <Card className="p-6 mb-6">
-          <h3 className="font-medium text-charcoal mb-4">Nuevo Servicio</h3>
+          <h3 className="font-medium text-charcoal mb-4">Nuevo servicio</h3>
           <ServiceForm onSave={saveService} onCancel={() => setShowNew(false)} />
         </Card>
       )}

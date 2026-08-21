@@ -52,7 +52,7 @@ export default function BlogAdminPage() {
       <div className="flex items-center justify-between mb-8">
         <h1 className="font-serif text-3xl text-charcoal">Recursos</h1>
         <Link href="/admin/blog/nuevo">
-          <Button variant="primary">Nuevo Artículo</Button>
+          <Button variant="primary">Nuevo artículo</Button>
         </Link>
       </div>
 

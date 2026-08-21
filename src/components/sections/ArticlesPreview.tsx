@@ -20,7 +20,7 @@ export function ArticlesPreview({ articles }: ArticlesPreviewProps) {
     <section className="py-20 bg-ivory">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          title="Artículos Recientes"
+          title="Artículos recientes"
           subtitle="Contenido educativo sobre salud mental"
         />
 

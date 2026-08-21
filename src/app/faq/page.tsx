@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { prisma } from "@/lib/db";
 
 export const metadata: Metadata = {
-  title: "Preguntas Frecuentes",
+  title: "Preguntas frecuentes",
   description:
     "Respuestas a las preguntas más comunes sobre terapia psicológica, sesiones, costos y confidencialidad con Zenia Álvarez Gulfo.",
 };
@@ -37,11 +37,11 @@ export default async function FAQPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         <section className="py-20 bg-ivory">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              title="Preguntas Frecuentes"
+            <SectionHeading as="h1"
+              title="Preguntas frecuentes"
               subtitle="Resuelve tus dudas antes de agendar tu primera sesión"
             />
 

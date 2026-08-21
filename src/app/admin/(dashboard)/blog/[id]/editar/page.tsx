@@ -138,7 +138,7 @@ export default function EditarArticuloPage() {
 
   return (
     <div>
-      <h1 className="font-serif text-3xl text-charcoal mb-8">Editar Artículo</h1>
+      <h1 className="font-serif text-3xl text-charcoal mb-8">Editar artículo</h1>
 
       <Card className="p-6">
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -164,7 +164,7 @@ export default function EditarArticuloPage() {
 
           <div>
             <label className="block text-sm font-medium text-charcoal mb-2">
-              Imagen Destacada
+              Imagen destacada
             </label>
             {imagePreview ? (
               <div className="relative w-full max-w-md">
@@ -235,7 +235,7 @@ export default function EditarArticuloPage() {
           </div>
 
           <Input
-            label="Meta Título (SEO)"
+            label="Meta título (SEO)"
             id="meta_title"
             name="meta_title"
             value={form.meta_title}
@@ -244,7 +244,7 @@ export default function EditarArticuloPage() {
           />
 
           <Textarea
-            label="Meta Descripción (SEO)"
+            label="Meta descripción (SEO)"
             id="meta_description"
             name="meta_description"
             value={form.meta_description}
@@ -254,7 +254,7 @@ export default function EditarArticuloPage() {
 
           <div className="flex gap-4">
             <Button type="submit" variant="primary" disabled={isSubmitting}>
-              {isSubmitting ? "Guardando..." : "Guardar Cambios"}
+              {isSubmitting ? "Guardando..." : "Guardar cambios"}
             </Button>
             <Button
               type="button"

@@ -52,7 +52,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="font-serif text-3xl text-charcoal mb-2">
-            Panel de Administración
+            Panel de administración
           </h1>
           <p className="text-warm-gray">
             Ingresa tus credenciales para acceder
@@ -91,7 +91,7 @@ export default function LoginPage() {
               className="w-full"
               disabled={isLoading}
             >
-              {isLoading ? "Iniciando sesión..." : "Iniciar Sesión"}
+              {isLoading ? "Iniciando sesión..." : "Iniciar sesión"}
             </Button>
           </form>
         </div>

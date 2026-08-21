@@ -91,7 +91,7 @@ export default function NuevoArticuloPage() {
 
   return (
     <div>
-      <h1 className="font-serif text-3xl text-charcoal mb-8">Nuevo Artículo</h1>
+      <h1 className="font-serif text-3xl text-charcoal mb-8">Nuevo artículo</h1>
 
       <Card className="p-6">
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -113,7 +113,7 @@ export default function NuevoArticuloPage() {
 
           <div>
             <label className="block text-sm font-medium text-charcoal mb-2">
-              Imagen Destacada
+              Imagen destacada
             </label>
             {imagePreview ? (
               <div className="relative w-full max-w-md">
@@ -178,14 +178,14 @@ export default function NuevoArticuloPage() {
           </div>
 
           <Input
-            label="Meta Título (SEO)"
+            label="Meta título (SEO)"
             id="meta_title"
             name="meta_title"
             placeholder="Título optimizado para buscadores"
           />
 
           <Textarea
-            label="Meta Descripción (SEO)"
+            label="Meta descripción (SEO)"
             id="meta_description"
             name="meta_description"
             placeholder="Descripción para buscadores (máx. 160 caracteres)"
@@ -193,7 +193,7 @@ export default function NuevoArticuloPage() {
 
           <div className="flex gap-4">
             <Button type="submit" variant="primary" disabled={isSubmitting}>
-              {isSubmitting ? "Guardando..." : "Guardar Artículo"}
+              {isSubmitting ? "Guardando..." : "Guardar artículo"}
             </Button>
             <Button
               type="button"

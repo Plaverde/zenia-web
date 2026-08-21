@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Aviso de Privacidad",
+  title: "Aviso de privacidad",
   description:
     "Aviso de privacidad del sitio web de Zenia Álvarez Gulfo, psicóloga clínica en Montería.",
 };
@@ -12,11 +12,11 @@ export default function AvisoPrivacidadPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         <section className="py-20 bg-ivory">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="font-serif text-4xl text-charcoal mb-8">
-              Aviso de Privacidad
+              Aviso de privacidad
             </h1>
 
             <div className="prose prose-lg max-w-none text-warm-gray leading-relaxed space-y-6">

@@ -35,7 +35,7 @@ export function SafetyScreen({ onContinue, onRestart }: SafetyScreenProps) {
               <a
                 key={number.value}
                 href={`tel:${number.tel ?? number.value}`}
-                className="block p-4 rounded-xl border-2 border-sage bg-sage/5 text-center hover:bg-sage/10 transition-colors min-h-[88px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
+                className="block p-4 rounded-xl border-2 border-sage bg-sage/5 text-center hover:bg-sage/10 transition-colors min-h-[88px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-dark"
               >
                 <span className="block font-serif text-3xl text-sage-dark">
                   {number.value}
@@ -67,7 +67,7 @@ export function SafetyScreen({ onContinue, onRestart }: SafetyScreenProps) {
           </div>
           <button
             onClick={onRestart}
-            className="mt-6 text-sm text-sage-dark underline underline-offset-2 hover:text-charcoal transition-colors min-h-[44px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
+            className="mt-6 text-sm text-sage-dark underline underline-offset-2 hover:text-charcoal transition-colors min-h-[44px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-dark"
           >
             Reiniciar la evaluación
           </button>

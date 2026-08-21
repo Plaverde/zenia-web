@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { EmergencyBanner } from "@/components/ui/EmergencyBanner";
 
 export const metadata: Metadata = {
-  title: "Derechos de las Personas en Salud Mental",
+  title: "Derechos de las personas en salud mental",
   description:
     "Conoce tus derechos como persona en el ámbito de la salud mental, conforme a la Ley 2460 de 2025 en Colombia.",
 };
@@ -77,10 +77,10 @@ export default function DerechosPersonasPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         <section className="py-20 bg-ivory">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeading
+            <SectionHeading as="h1"
               title="Tus derechos en salud mental"
               subtitle="Conforme a la Ley 2460 de 2025, que modifica la Ley 1616 de 2013, estas son tus derechos como persona en el ámbito de la salud mental en Colombia."
               align="center"

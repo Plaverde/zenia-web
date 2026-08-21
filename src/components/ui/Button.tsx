@@ -16,13 +16,13 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium transition-colors duration-200 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage";
+    "inline-flex items-center justify-center font-medium transition-colors duration-200 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-dark";
 
   const variants = {
     primary:
-      "bg-sage-dark text-white hover:bg-sage focus-visible:outline-sage-dark",
+      "bg-sage-dark text-white hover:bg-terracotta-dark focus-visible:outline-sage-dark",
     secondary:
-      "bg-terracotta text-white hover:bg-terracotta-dark focus-visible:outline-terracotta",
+      "bg-terracotta-dark text-white hover:bg-sage-dark focus-visible:outline-terracotta-dark",
     outline:
       "border-2 border-sage-dark text-sage-dark hover:bg-sage-dark hover:text-white focus-visible:outline-sage-dark",
     ghost: "text-sage-dark hover:bg-sage/10 focus-visible:outline-sage-dark",

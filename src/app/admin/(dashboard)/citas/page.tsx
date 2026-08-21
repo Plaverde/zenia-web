@@ -79,7 +79,7 @@ export default function CitasPage() {
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
-        <h1 className="font-serif text-3xl text-charcoal">Gestión de Citas</h1>
+        <h1 className="font-serif text-3xl text-charcoal">Gestión de citas</h1>
         <div className="w-48">
           <Select
             id="filter"
@@ -127,7 +127,7 @@ export default function CitasPage() {
                     </p>
                     <p>🛋️ {apt.service_type} | {apt.modality}</p>
                     <p>📧 {apt.email} | 📱 {apt.phone}</p>
-                    {apt.notes && <p className="italic">&ldquo;{apt.notes}&rdquo;</p>}
+                    {apt.notes && <p className="italic">«{apt.notes}»</p>}
                   </div>
                 </div>
                 <div className="flex gap-2">

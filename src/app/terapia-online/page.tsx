@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { EmergencyBanner } from "@/components/ui/EmergencyBanner";
 
 export const metadata: Metadata = {
-  title: "Terapia Online",
+  title: "Terapia online",
   description:
     "Conoce cómo funciona la terapia online con Zenia Álvarez Gulfo. Sesiones por videollamada segura con la misma calidad y confidencialidad que una sesión presencial.",
 };
@@ -23,11 +23,11 @@ export default function TerapiaOnlinePage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         {/* Hero */}
         <section className="py-20 bg-ivory">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-sage-dark font-medium mb-2">Terapia Online</p>
+            <p className="text-sage-dark font-medium mb-2">Terapia online</p>
             <h1 className="font-serif text-4xl md:text-5xl text-charcoal mb-6">
               Tu terapia desde donde te encuentres
             </h1>
@@ -37,7 +37,7 @@ export default function TerapiaOnlinePage() {
               elegir tu espacio.
             </p>
             <Button href="https://www.doctoralia.co/perfil/zenia-maria-alvarez-gulfo" size="lg">
-              Agendar Sesión Online
+              Agendar sesión Online
             </Button>
           </div>
         </section>
@@ -210,7 +210,7 @@ export default function TerapiaOnlinePage() {
               terapia online puede adaptarse a tu vida.
             </p>
             <Button href="https://www.doctoralia.co/perfil/zenia-maria-alvarez-gulfo" variant="secondary" size="lg">
-              Agendar Sesión Online
+              Agendar sesión Online
             </Button>
           </div>
         </section>

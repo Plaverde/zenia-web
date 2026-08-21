@@ -15,10 +15,10 @@ export default function EspecialidadesPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         <section className="py-20 bg-ivory">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeading
+            <SectionHeading as="h1"
               title="Especialidades"
               subtitle="Áreas de enfoque terapéutico con respaldo científico"
             />

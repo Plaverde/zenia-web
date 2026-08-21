@@ -19,7 +19,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Zenia Álvarez Gulfo | Psicóloga Clínica en Montería",
+    default: "Zenia Álvarez Gulfo | Psicóloga clínica en Montería",
     template: "%s | Zenia Álvarez Gulfo",
   },
   description:
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_CO",
-    siteName: "Zenia Álvarez Gulfo - Psicóloga Clínica",
-    title: "Zenia Álvarez Gulfo | Psicóloga Clínica en Montería",
+    siteName: "Zenia Álvarez Gulfo - Psicóloga clínica",
+    title: "Zenia Álvarez Gulfo | Psicóloga clínica en Montería",
     description:
       "Acompañamiento psicológico profesional para ansiedad y depresión, con terapias de tercera generación como mindfulness y ACT.",
     images: [
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
         url: "/images/hero-zenia.webp",
         width: 1200,
         height: 630,
-        alt: "Zenia Álvarez Gulfo - Psicóloga Clínica en Montería",
+        alt: "Zenia Álvarez Gulfo - Psicóloga clínica en Montería",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zenia Álvarez Gulfo | Psicóloga Clínica en Montería",
+    title: "Zenia Álvarez Gulfo | Psicóloga clínica en Montería",
     description:
       "Acompañamiento psicológico profesional para ansiedad y depresión, con terapias de tercera generación como mindfulness y ACT.",
   },
@@ -112,7 +112,7 @@ export default function RootLayout({
                 "Depresión",
                 "Mindfulness",
                 "Terapia ACT",
-                "Terapias de Tercera Generación",
+                "Terapias de tercera generación",
               ],
               priceRange: "$$",
               telephone: SITE.phone,
@@ -126,6 +126,12 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col antialiased">
+        <a
+          href="#contenido"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-sage-dark focus:px-4 focus:py-3 focus:font-medium focus:text-white focus:outline-2 focus:outline-offset-2 focus:outline-sage-dark"
+        >
+          Saltar al contenido principal
+        </a>
         <Toaster
           position="top-center"
           toastOptions={{

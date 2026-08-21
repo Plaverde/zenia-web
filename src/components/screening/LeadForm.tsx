@@ -148,7 +148,7 @@ export function LeadForm({ onDismiss }: LeadFormProps) {
             setConsentError("");
           }}
           error={consentError || undefined}
-          label="Autorizo que mis datos de contacto sean usados únicamente para que Zenia Álvarez Gulfo me escriba y oriente sobre el acompañamiento psicológico. Conozco y acepto la Política de Tratamiento de Datos Personales."
+          label="Autorizo que mis datos de contacto sean usados únicamente para que Zenia Álvarez Gulfo me escriba y oriente sobre el acompañamiento psicológico. Conozco y acepto la Política de tratamiento de datos personales."
         />
 
         <p className="text-sm text-warm-gray leading-relaxed">
@@ -181,7 +181,7 @@ export function LeadForm({ onDismiss }: LeadFormProps) {
           <button
             type="button"
             onClick={onDismiss}
-            className="w-full sm:w-auto min-h-[44px] text-sm text-sage-dark underline underline-offset-2 hover:text-charcoal transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
+            className="w-full sm:w-auto min-h-[44px] text-sm text-sage-dark underline underline-offset-2 hover:text-charcoal transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-dark"
           >
             No, solo quiero ver mi resultado
           </button>

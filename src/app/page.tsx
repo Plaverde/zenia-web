@@ -51,7 +51,7 @@ export default async function HomePage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         <Hero />
         <ProfessionalProfile />
         <TriageAssistant />

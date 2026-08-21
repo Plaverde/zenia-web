@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Política de Tratamiento de Datos Personales",
+  title: "Política de tratamiento de datos personales",
   description:
     "Conoce cómo Zenia Álvarez Gulfo trata y protege tus datos personales conforme a la Ley 1581 de 2012 de Colombia.",
 };
@@ -12,11 +12,11 @@ export default function PoliticaDatosPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         <section className="py-20 bg-ivory">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="font-serif text-4xl text-charcoal mb-8">
-              Política de Tratamiento de Datos Personales
+              Política de tratamiento de datos personales
             </h1>
 
             <div className="prose prose-lg max-w-none text-warm-gray leading-relaxed space-y-6">

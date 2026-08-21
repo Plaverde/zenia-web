@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Sobre Mí",
+  title: "Sobre mí",
   description:
     "Conoce a Zenia Álvarez Gulfo, psicóloga clínica en Montería, Córdoba. Especialista en ansiedad y depresión con terapias de tercera generación.",
 };
@@ -15,7 +15,7 @@ export default function SobreMiPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         <section className="py-20 bg-ivory">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row gap-12">
@@ -28,8 +28,8 @@ export default function SobreMiPage() {
 
               {/* Contenido */}
               <div className="md:w-2/3">
-                <SectionHeading
-                  title="Sobre Mí"
+                <SectionHeading as="h1"
+                  title="Sobre mí"
                   subtitle="Conoce mi enfoque y trayectoria profesional"
                 />
 
@@ -48,7 +48,7 @@ export default function SobreMiPage() {
                     <ul className="space-y-3">
                       <li className="flex gap-3">
                         <span className="text-sage-dark mt-1">•</span>
-                        <span>Psicología Clínica — [UNIVERSIDAD]</span>
+                        <span>Psicología clínica, [UNIVERSIDAD]</span>
                       </li>
                       <li className="flex gap-3">
                         <span className="text-sage-dark mt-1">•</span>
@@ -60,7 +60,7 @@ export default function SobreMiPage() {
                       </li>
                       <li className="flex gap-3">
                         <span className="text-sage-dark mt-1">•</span>
-                        <span>Formación en Mindfulness y Terapias Contextuales</span>
+                        <span>Formación en mindfulness y terapias contextuales</span>
                       </li>
                       <li className="flex gap-3">
                         <span className="text-sage-dark mt-1">•</span>
@@ -76,8 +76,8 @@ export default function SobreMiPage() {
                     </h2>
                     <div className="bg-sage/5 rounded-2xl p-6 border border-sage/20">
                       <p className="italic text-lg">
-                        &ldquo;No trabajo únicamente el síntoma; trabajo la raíz del
-                        problema para lograr cambios duraderos.&rdquo;
+                        «No trabajo únicamente el síntoma; trabajo la raíz del
+                        problema para lograr cambios duraderos.»
                       </p>
                     </div>
                     <p className="mt-4">
@@ -131,7 +131,7 @@ export default function SobreMiPage() {
 
                   <div className="pt-4">
                     <Button href="https://www.doctoralia.co/perfil/zenia-maria-alvarez-gulfo" size="lg">
-                      Agendar Primera Sesión
+                      Agendar primera sesión
                     </Button>
                   </div>
                 </div>

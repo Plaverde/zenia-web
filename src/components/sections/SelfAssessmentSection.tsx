@@ -34,7 +34,7 @@ export function SelfAssessmentSection() {
                   </svg>
                 </span>
                 <span className="text-warm-gray leading-relaxed pt-1">
-                  Solo toma <strong className="text-charcoal font-medium">2–3 minutos</strong>.
+                  Solo toma <strong className="text-charcoal font-medium">2 a 3 minutos</strong>.
                 </span>
               </li>
               <li className="flex items-start gap-3">

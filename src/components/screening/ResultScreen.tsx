@@ -162,7 +162,7 @@ function ResultCard({ result }: { result: ScaleResult }) {
       </p>
       <p className="text-xs text-warm-gray-light leading-relaxed mt-2">
         Referencia oficial del cuestionario:{" "}
-        {result.officialCutpoints.map((c) => c.label).join(" · ")}
+        {result.officialCutpoints.map((c) => c.label).join(", ")}
       </p>
     </div>
   );
@@ -264,7 +264,7 @@ export function ResultScreen({ results, onRestart, onFinish }: ResultScreenProps
           <div className="text-center mt-10">
             <button
               onClick={onRestart}
-              className="min-h-[44px] px-4 text-sm text-sage-dark underline underline-offset-2 hover:text-charcoal transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
+              className="min-h-[44px] px-4 text-sm text-sage-dark underline underline-offset-2 hover:text-charcoal transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-dark"
             >
               Reiniciar la evaluación
             </button>

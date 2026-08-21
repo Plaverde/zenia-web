@@ -83,15 +83,15 @@ export default function TestimoniosAdminPage() {
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
-        <h1 className="font-serif text-3xl text-charcoal">Gestión de Testimonios</h1>
+        <h1 className="font-serif text-3xl text-charcoal">Gestión de testimonios</h1>
         <Button variant="primary" onClick={() => setShowNew(true)}>
-          Nuevo Testimonio
+          Nuevo testimonio
         </Button>
       </div>
 
       {showNew && (
         <Card className="p-6 mb-6">
-          <h3 className="font-medium text-charcoal mb-4">Nuevo Testimonio</h3>
+          <h3 className="font-medium text-charcoal mb-4">Nuevo testimonio</h3>
           <TestimonialForm
             onSave={saveTestimonial}
             onCancel={() => setShowNew(false)}

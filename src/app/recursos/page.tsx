@@ -61,11 +61,11 @@ export default function RecursosPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="contenido" className="flex-1">
         {/* Hero */}
         <section className="py-20 bg-ivory">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeading
+            <SectionHeading as="h1"
               title="Recursos"
               subtitle="Herramientas y contenido educativo para cuidar tu salud mental"
             />

@@ -44,7 +44,7 @@ export default async function DashboardPage() {
 
   const statCards = [
     {
-      label: "Citas Pendientes",
+      label: "Citas pendientes",
       value: stats.pendingAppointments,
       href: "/admin/citas",
       color: "bg-terracotta/10 text-terracotta",
@@ -56,19 +56,19 @@ export default async function DashboardPage() {
       color: "bg-sage/10 text-sage",
     },
     {
-      label: "Mensajes Sin Leer",
+      label: "Mensajes sin leer",
       value: stats.unreadMessages,
       href: "/admin/mensajes",
       color: "bg-sand text-charcoal",
     },
     {
-      label: "Artículos Publicados",
+      label: "Artículos publicados",
       value: stats.publishedPosts,
       href: "/admin/blog",
       color: "bg-sage-light/30 text-sage-dark",
     },
     {
-      label: "Testimonios Activos",
+      label: "Testimonios activos",
       value: stats.activeTestimonials,
       href: "/admin/testimonios",
       color: "bg-terracotta/10 text-terracotta",

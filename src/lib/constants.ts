@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Zenia Álvarez Gulfo",
-  profession: "Psicóloga Clínica",
+  profession: "Psicóloga clínica",
   city: "Montería, Córdoba, Colombia",
   address: "Cra 19 #10-25 Centro, Montería",
   phone: "[NUMERO_DE_WHATSAPP]",
@@ -16,39 +16,39 @@ export const BLOG_CATEGORIES = [
   { value: "depresion", label: "Depresión" },
   { value: "mindfulness", label: "Mindfulness" },
   { value: "act", label: "ACT" },
-  { value: "regulacion-emocional", label: "Regulación Emocional" },
+  { value: "regulacion-emocional", label: "Regulación emocional" },
   { value: "autocuidado", label: "Autocuidado" },
-  { value: "salud-mental", label: "Salud Mental" },
+  { value: "salud-mental", label: "Salud mental" },
 ];
 
 export const SERVICES = [
   {
     id: "terapia-individual",
-    title: "Terapia Individual para Adultos",
+    title: "Terapia individual para adultos",
     description:
       "Un espacio seguro y confidencial para trabajar tu bienestar emocional a tu propio ritmo, con un enfoque humano, cercano y basado en evidencia.",
   },
   {
     id: "ansiedad",
-    title: "Atención Especializada en Ansiedad",
+    title: "Atención especializada en ansiedad",
     description:
       "Acompañamiento para entender y manejar la ansiedad desde terapias de tercera generación, como ACT y mindfulness, para que recuperes tu equilibrio poco a poco.",
   },
   {
     id: "depresion",
-    title: "Atención Especializada en Depresión",
+    title: "Atención especializada en depresión",
     description:
       "Espacio de contención para atravesar episodios depresivos, reconstruir la motivación y encontrar de nuevo espacios de bienestar.",
   },
   {
     id: "terapia-presencial",
-    title: "Terapia Presencial en Montería",
+    title: "Terapia presencial en Montería",
     description:
       "Sesiones en consultorio ubicado en el centro de Montería, en un ambiente cálido, privado y pensado para tu comodidad.",
   },
   {
     id: "terapia-virtual",
-    title: "Terapia Virtual (Videollamada)",
+    title: "Terapia virtual (videollamada)",
     description:
       "Atención profesional desde donde te encuentres, con la misma calidad, confidencialidad y cuidado que una sesión presencial.",
   },
@@ -105,7 +105,7 @@ export const SPECIALTIES = [
   },
   {
     slug: "pareja",
-    title: "Problemas de Pareja",
+    title: "Problemas de pareja",
     category: "relaciones",
     summary:
       "Las relaciones no son perfectas, pero sí pueden ser sanas. Si la distancia, los conflictos o la incomodidad dominan tu relación, hay caminos para recuperar la conexión.",
@@ -190,10 +190,10 @@ export const SPECIALTIES = [
 ] as const;
 
 export const SPECIALTY_CATEGORIES = [
-  { id: "emocional", label: "Salud Emocional" },
+  { id: "emocional", label: "Salud emocional" },
   { id: "relaciones", label: "Relaciones" },
   { id: "desarrollo", label: "Desarrollo" },
-  { id: "laboral", label: "Ámbito Laboral" },
+  { id: "laboral", label: "Ámbito laboral" },
   { id: "neurodesarrollo", label: "Neurodesarrollo" },
   { id: "trauma", label: "Trauma" },
 ] as const;
