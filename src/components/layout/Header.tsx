@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { SITE } from "@/lib/constants";
@@ -12,11 +12,78 @@ const navItems = [
   { href: "/especialidades", label: "Especialidades" },
   { href: "/terapia-online", label: "Terapia online" },
   { href: "/tarifas", label: "Tarifas" },
+  { href: "/contacto", label: "Contacto" },
+];
+
+const resourceItems = [
   { href: "/recursos", label: "Recursos" },
   { href: "/autoevaluacion", label: "Autoevaluación" },
   { href: "/faq", label: "Preguntas frecuentes" },
-  { href: "/contacto", label: "Contacto" },
 ];
+
+// Mobile nav is already a single vertical list, so there's no benefit to
+// the "Recursos" grouping there — show everything flat, in reading order.
+const mobileNavItems = [...navItems.slice(0, 4), ...resourceItems, ...navItems.slice(4)];
+
+function ResourcesDropdown() {
+  const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") setIsOpen(false);
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="flex items-center gap-1 text-sm font-medium text-warm-gray hover:text-sage-dark transition-colors"
+        aria-haspopup="true"
+        aria-expanded={isOpen}
+      >
+        Recursos
+        <svg
+          className={`w-3.5 h-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {isOpen && (
+        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white border border-sand rounded-xl shadow-lg py-2 z-50">
+          {resourceItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+              className="block px-4 py-2.5 text-sm text-warm-gray hover:text-sage-dark hover:bg-sage/5 transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,7 +103,17 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8" aria-label="Navegación principal">
-            {navItems.map((item) => (
+            {navItems.slice(0, 4).map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium text-warm-gray hover:text-sage-dark transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <ResourcesDropdown />
+            {navItems.slice(4).map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -100,7 +177,7 @@ export function Header() {
             aria-label="Navegación móvil"
           >
             <ul className="space-y-2">
-              {navItems.map((item) => (
+              {mobileNavItems.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
