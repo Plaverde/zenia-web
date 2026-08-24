@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { auth } from "@/lib/auth";
+import { requireAdmin } from "@/lib/require-admin";
+import { blogPostSchema } from "@/lib/admin-schemas";
 
 function generateSlug(title: string): string {
   return title
@@ -29,10 +30,8 @@ async function uniqueSlug(base: string, excludeId?: number): Promise<string> {
 }
 
 export async function GET() {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { error } = await requireAdmin();
+  if (error) return error;
 
   const posts = await prisma.blog_posts.findMany({
     orderBy: { created_at: "desc" },
@@ -42,40 +41,38 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const { error } = await requireAdmin();
+  if (error) return error;
+
+  const parsed = blogPostSchema.safeParse(await request.json());
+  if (!parsed.success) {
+    return NextResponse.json({ error: "Datos inválidos" }, { status: 400 });
   }
+  const data = parsed.data;
 
-  const body = await request.json();
-
-  if (!body.title?.trim()) {
-    return NextResponse.json({ error: "Title is required" }, { status: 400 });
-  }
-
-  const baseSlug = generateSlug(body.title);
+  const baseSlug = generateSlug(data.title);
   const slug = await uniqueSlug(baseSlug);
 
   try {
     const post = await prisma.blog_posts.create({
       data: {
         slug,
-        title: body.title,
-        excerpt: body.excerpt,
-        content: body.content,
-        category: body.category,
-        meta_title: body.meta_title,
-        meta_description: body.meta_description,
-        featured_image: body.featured_image,
-        status: body.status || "draft",
-        published_at: body.status === "published" ? new Date() : null,
+        title: data.title,
+        excerpt: data.excerpt,
+        content: data.content,
+        category: data.category,
+        meta_title: data.meta_title,
+        meta_description: data.meta_description,
+        featured_image: data.featured_image,
+        status: data.status,
+        published_at: data.status === "published" ? new Date() : null,
       },
     });
 
     return NextResponse.json(post, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
-      { error: "Error creating post", details: error },
+      { error: "Error creating post" },
       { status: 500 }
     );
   }

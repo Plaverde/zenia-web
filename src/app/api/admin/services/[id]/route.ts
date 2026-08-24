@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { auth } from "@/lib/auth";
+import { requireAdmin } from "@/lib/require-admin";
+import { serviceUpdateSchema } from "@/lib/admin-schemas";
 
 function generateSlug(title: string): string {
   return title
@@ -29,37 +30,35 @@ export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { error } = await requireAdmin();
+  if (error) return error;
 
   const { id } = await params;
   const serviceId = parseInt(id);
-  const body = await request.json();
+
+  const parsed = serviceUpdateSchema.safeParse(await request.json());
+  if (!parsed.success) {
+    return NextResponse.json({ error: "Datos inválidos" }, { status: 400 });
+  }
+  const data = parsed.data;
 
   try {
     let slug: string | undefined;
-    if (body.title) {
+    if (data.title) {
       const current = await prisma.services.findUnique({
         where: { id: serviceId },
         select: { title: true },
       });
-      if (current && current.title !== body.title) {
-        slug = await uniqueSlug(generateSlug(body.title), serviceId);
+      if (current && current.title !== data.title) {
+        slug = await uniqueSlug(generateSlug(data.title), serviceId);
       }
     }
 
     const service = await prisma.services.update({
       where: { id: serviceId },
       data: {
+        ...data,
         ...(slug ? { slug } : {}),
-        title: body.title,
-        description: body.description,
-        duration: body.duration,
-        price: body.price,
-        active: body.active,
-        order: body.order,
       },
     });
     return NextResponse.json(service);
@@ -72,10 +71,8 @@ export async function DELETE(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { error } = await requireAdmin();
+  if (error) return error;
 
   const { id } = await params;
 

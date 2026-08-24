@@ -1,29 +1,26 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { auth } from "@/lib/auth";
+import { requireAdmin } from "@/lib/require-admin";
+import { testimonialUpdateSchema } from "@/lib/admin-schemas";
 
 export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { error } = await requireAdmin();
+  if (error) return error;
 
   const { id } = await params;
-  const body = await request.json();
+
+  const parsed = testimonialUpdateSchema.safeParse(await request.json());
+  if (!parsed.success) {
+    return NextResponse.json({ error: "Datos inválidos" }, { status: 400 });
+  }
 
   try {
     const testimonial = await prisma.testimonials.update({
       where: { id: parseInt(id) },
-      data: {
-        patient_name: body.patient_name,
-        content: body.content,
-        rating: body.rating,
-        active: body.active,
-        order: body.order,
-      },
+      data: parsed.data,
     });
     return NextResponse.json(testimonial);
   } catch {
@@ -35,10 +32,8 @@ export async function DELETE(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { error } = await requireAdmin();
+  if (error) return error;
 
   const { id } = await params;
 

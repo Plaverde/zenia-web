@@ -1,28 +1,26 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { auth } from "@/lib/auth";
+import { requireAdmin } from "@/lib/require-admin";
+import { faqItemUpdateSchema } from "@/lib/admin-schemas";
 
 export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { error } = await requireAdmin();
+  if (error) return error;
 
   const { id } = await params;
-  const body = await request.json();
+
+  const parsed = faqItemUpdateSchema.safeParse(await request.json());
+  if (!parsed.success) {
+    return NextResponse.json({ error: "Datos inválidos" }, { status: 400 });
+  }
 
   try {
     const faq = await prisma.faq_items.update({
       where: { id: parseInt(id) },
-      data: {
-        question: body.question,
-        answer: body.answer,
-        order: body.order,
-        active: body.active,
-      },
+      data: parsed.data,
     });
     return NextResponse.json(faq);
   } catch {
@@ -34,10 +32,8 @@ export async function DELETE(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { error } = await requireAdmin();
+  if (error) return error;
 
   const { id } = await params;
 

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { auth } from "@/lib/auth";
+import { requireAdmin } from "@/lib/require-admin";
+import { serviceSchema } from "@/lib/admin-schemas";
 
 function generateSlug(title: string): string {
   return title
@@ -26,10 +27,8 @@ async function uniqueSlug(base: string): Promise<string> {
 }
 
 export async function GET() {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { error } = await requireAdmin();
+  if (error) return error;
 
   try {
     const services = await prisma.services.findMany({
@@ -42,24 +41,20 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const { error } = await requireAdmin();
+  if (error) return error;
+
+  const parsed = serviceSchema.safeParse(await request.json());
+  if (!parsed.success) {
+    return NextResponse.json({ error: "Datos inválidos" }, { status: 400 });
   }
+  const data = parsed.data;
 
   try {
-    const body = await request.json();
-    const slug = await uniqueSlug(generateSlug(body.title));
+    const slug = await uniqueSlug(generateSlug(data.title));
 
     const service = await prisma.services.create({
-      data: {
-        slug,
-        title: body.title,
-        description: body.description,
-        duration: body.duration,
-        price: body.price,
-        order: body.order || 0,
-      },
+      data: { ...data, slug },
     });
 
     return NextResponse.json(service, { status: 201 });

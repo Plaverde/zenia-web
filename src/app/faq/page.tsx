@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { AccordionItem } from "@/components/ui/AccordionItem";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { prisma } from "@/lib/db";
+import { jsonLdScript } from "@/lib/json-ld";
 
 export const metadata: Metadata = {
   title: "Preguntas frecuentes",
@@ -43,7 +44,7 @@ export default async function FAQPage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: jsonLdScript({
               "@context": "https://schema.org",
               "@type": "FAQPage",
               mainEntity: faqs.map((faq) => ({

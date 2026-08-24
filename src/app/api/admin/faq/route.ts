@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { auth } from "@/lib/auth";
+import { requireAdmin } from "@/lib/require-admin";
+import { faqItemSchema } from "@/lib/admin-schemas";
 
 export async function GET() {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { error } = await requireAdmin();
+  if (error) return error;
 
   const faqs = await prisma.faq_items.findMany({
     orderBy: { order: "asc" },
@@ -16,25 +15,22 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { error } = await requireAdmin();
+  if (error) return error;
 
-  const body = await request.json();
+  const parsed = faqItemSchema.safeParse(await request.json());
+  if (!parsed.success) {
+    return NextResponse.json({ error: "Datos inválidos" }, { status: 400 });
+  }
+  const data = parsed.data;
 
   try {
     const faq = await prisma.faq_items.create({
-      data: {
-        question: body.question,
-        answer: body.answer,
-        order: body.order || 0,
-        active: body.active ?? true,
-      },
+      data,
     });
 
     return NextResponse.json(faq, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Error creating FAQ" }, { status: 500 });
   }
 }

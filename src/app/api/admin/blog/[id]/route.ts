@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { auth } from "@/lib/auth";
+import { requireAdmin } from "@/lib/require-admin";
+import { blogPostSchema } from "@/lib/admin-schemas";
 
 function generateSlug(title: string): string {
   return title
@@ -29,10 +30,8 @@ export async function GET(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { error } = await requireAdmin();
+  if (error) return error;
 
   const { id } = await params;
 
@@ -50,18 +49,17 @@ export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { error } = await requireAdmin();
+  if (error) return error;
 
   const { id } = await params;
-  const body = await request.json();
   const postId = parseInt(id);
 
-  if (!body.title?.trim()) {
-    return NextResponse.json({ error: "Title is required" }, { status: 400 });
+  const parsed = blogPostSchema.safeParse(await request.json());
+  if (!parsed.success) {
+    return NextResponse.json({ error: "Datos inválidos" }, { status: 400 });
   }
+  const data = parsed.data;
 
   // Regenerate slug if title changed
   let slug: string | undefined;
@@ -69,8 +67,8 @@ export async function PATCH(
     where: { id: postId },
     select: { title: true, published_at: true },
   });
-  if (currentPost && currentPost.title !== body.title) {
-    const baseSlug = generateSlug(body.title);
+  if (currentPost && currentPost.title !== data.title) {
+    const baseSlug = generateSlug(data.title);
     slug = await uniqueSlug(baseSlug, postId);
   }
 
@@ -79,17 +77,17 @@ export async function PATCH(
       where: { id: postId },
       data: {
         ...(slug ? { slug } : {}),
-        title: body.title,
-        excerpt: body.excerpt,
-        content: body.content,
-        category: body.category,
-        meta_title: body.meta_title,
-        meta_description: body.meta_description,
-        featured_image: body.featured_image,
-        status: body.status,
-        ...(body.status === "published" && !currentPost?.published_at
+        title: data.title,
+        excerpt: data.excerpt,
+        content: data.content,
+        category: data.category,
+        meta_title: data.meta_title,
+        meta_description: data.meta_description,
+        featured_image: data.featured_image,
+        status: data.status,
+        ...(data.status === "published" && !currentPost?.published_at
           ? { published_at: new Date() }
-          : body.status === "draft"
+          : data.status === "draft"
           ? { published_at: null }
           : {}),
       },
@@ -104,10 +102,8 @@ export async function DELETE(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const session = await auth();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { error } = await requireAdmin();
+  if (error) return error;
 
   const { id } = await params;
 

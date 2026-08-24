@@ -10,6 +10,7 @@ import { EmergencyBanner } from "@/components/ui/EmergencyBanner";
 import { MarkdownRenderer } from "@/components/ui/MarkdownRenderer";
 import { prisma } from "@/lib/db";
 import { SITE } from "@/lib/constants";
+import { jsonLdScript } from "@/lib/json-ld";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -176,7 +177,7 @@ export default async function BlogPostPage({ params }: Props) {
             <script
               type="application/ld+json"
               dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
+                __html: jsonLdScript({
                   "@context": "https://schema.org",
                   "@type": "Article",
                   headline: post.title,
