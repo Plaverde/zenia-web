@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { Tooltip } from "@/components/ui/Tooltip";
 
 interface ConsentStepProps {
   onAccept: () => void;
@@ -10,15 +11,6 @@ interface ConsentStepProps {
 
 export function ConsentStep({ onAccept, onBack }: ConsentStepProps) {
   const [accepted, setAccepted] = useState(false);
-  const [error, setError] = useState("");
-
-  function handleContinue() {
-    if (!accepted) {
-      setError("Debes aceptar el tratamiento de datos para continuar.");
-      return;
-    }
-    onAccept();
-  }
 
   return (
     <section className="py-16 bg-ivory">
@@ -53,10 +45,7 @@ export function ConsentStep({ onAccept, onBack }: ConsentStepProps) {
               type="checkbox"
               id="screening-consent"
               checked={accepted}
-              onChange={(e) => {
-                setAccepted(e.target.checked);
-                setError("");
-              }}
+              onChange={(e) => setAccepted(e.target.checked)}
               className="mt-1 h-5 w-5 rounded accent-sage-dark"
             />
             <span className="text-sm text-warm-gray leading-relaxed">
@@ -66,12 +55,6 @@ export function ConsentStep({ onAccept, onBack }: ConsentStepProps) {
             </span>
           </label>
 
-          {error && (
-            <p role="alert" className="text-sm text-red-600 mt-3">
-              {error}
-            </p>
-          )}
-
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Button
               onClick={onBack}
@@ -80,9 +63,21 @@ export function ConsentStep({ onAccept, onBack }: ConsentStepProps) {
             >
               Anterior
             </Button>
-            <Button onClick={handleContinue} size="lg" className="w-full sm:w-auto">
-              Continuar
-            </Button>
+            {accepted ? (
+              <Button onClick={onAccept} size="lg" className="w-full sm:w-auto">
+                Continuar
+              </Button>
+            ) : (
+              <Tooltip
+                content="Debes aceptar el tratamiento de datos para continuar."
+                disabled
+                className="w-full sm:w-auto"
+              >
+                <Button size="lg" className="w-full" disabled>
+                  Continuar
+                </Button>
+              </Tooltip>
+            )}
           </div>
         </div>
       </div>

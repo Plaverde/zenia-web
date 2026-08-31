@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Select } from "@/components/ui/Select";
+import { Tooltip } from "@/components/ui/Tooltip";
 import { toast } from "sonner";
 
 interface Patient {
@@ -154,13 +155,30 @@ export default function PacientesPage() {
                     </Button>
                   )}
                   {patient.status !== "archived" && (
-                    <Button
-                      onClick={() => updateStatus(patient.id, "archived")}
-                      variant="outline"
-                      size="sm"
-                    >
-                      Archivar
-                    </Button>
+                    <Tooltip content="Archivar paciente">
+                      <Button
+                        onClick={() => updateStatus(patient.id, "archived")}
+                        variant="outline"
+                        size="sm"
+                        aria-label="Archivar paciente"
+                        className="!px-3"
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-4 w-4"
+                          aria-hidden="true"
+                        >
+                          <rect x="3" y="4" width="18" height="4" rx="1" />
+                          <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8" />
+                          <path d="M10 12h4" />
+                        </svg>
+                      </Button>
+                    </Tooltip>
                   )}
                 </div>
               </div>

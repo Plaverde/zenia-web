@@ -63,10 +63,9 @@ describe("ScreeningFlow", () => {
     await completePhq9(user, []);
 
     expect(screen.getByText("Pregunta 1 de 9")).toBeInTheDocument();
-    await user.click(screen.getByRole("button", { name: "Continuar" }));
-    expect(screen.getByRole("alert")).toHaveTextContent(
-      /selecciona una opción/i
-    );
+    const cont = screen.getByRole("button", { name: "Continuar" });
+    expect(cont).toBeDisabled();
+    await user.click(cont);
     expect(screen.getByText("Pregunta 1 de 9")).toBeInTheDocument();
   });
 
@@ -206,6 +205,7 @@ describe("ScreeningFlow", () => {
 
     const radios = screen.getAllByRole("radio");
     expect(radios).toHaveLength(4);
+    await user.click(radios[0]);
     const back = screen.getByRole("button", { name: "Anterior" });
     const cont = screen.getByRole("button", { name: "Continuar" });
     expect(back).not.toBeDisabled();
@@ -224,9 +224,7 @@ describe("ScreeningFlow", () => {
     expect(cont).toHaveFocus();
 
     await user.keyboard("{Enter}");
-    expect(screen.getByRole("alert")).toHaveTextContent(
-      /selecciona una opción/i
-    );
+    expect(screen.getByText("Pregunta 3 de 9")).toBeInTheDocument();
   });
 
   it("8. el lead es opcional: se finaliza sin enviarlo", async () => {
@@ -309,10 +307,9 @@ describe("ScreeningFlow", () => {
     await goToScaleSelect(user);
     await choosePhq9(user);
 
-    await user.click(screen.getByRole("button", { name: "Continuar" }));
-    expect(screen.getByRole("alert")).toHaveTextContent(
-      /debes aceptar el tratamiento/i
-    );
+    const cont = screen.getByRole("button", { name: "Continuar" });
+    expect(cont).toBeDisabled();
+    await user.click(cont);
     expect(screen.getByRole("checkbox")).toBeInTheDocument();
     expect(screen.queryByText("Pregunta 1 de 9")).not.toBeInTheDocument();
 

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { Tooltip } from "@/components/ui/Tooltip";
 import type { AnswerValue, InstrumentDefinition, ScreeningItem } from "@/lib/instruments";
 
 interface QuestionStepProps {
@@ -25,16 +25,8 @@ export function QuestionStep({
   onNext,
   onBack,
 }: QuestionStepProps) {
-  const [error, setError] = useState("");
   const questionNumber = index + 1;
-
-  function handleNext() {
-    if (value === undefined) {
-      setError("Selecciona una opción para continuar.");
-      return;
-    }
-    onNext();
-  }
+  const isAnswered = value !== undefined;
 
   return (
     <section className="py-16 bg-ivory">
@@ -98,10 +90,7 @@ export function QuestionStep({
                     name={`${instrument.id}-q-${item.id}`}
                     value={option.value}
                     checked={value === option.value}
-                    onChange={() => {
-                      onAnswer(option.value);
-                      setError("");
-                    }}
+                    onChange={() => onAnswer(option.value)}
                     className="mt-1 h-5 w-5 accent-sage-dark"
                   />
                   <span className="font-medium text-charcoal">
@@ -112,20 +101,22 @@ export function QuestionStep({
             </div>
           </fieldset>
 
-          {error && (
-            <p role="alert" className="text-sm text-red-600 mt-3">
-              {error}
-            </p>
-          )}
-
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <Button
-              onClick={handleNext}
-              size="lg"
-              className="w-full sm:w-auto"
-            >
-              Continuar
-            </Button>
+            {isAnswered ? (
+              <Button onClick={onNext} size="lg" className="w-full sm:w-auto">
+                Continuar
+              </Button>
+            ) : (
+              <Tooltip
+                content="Selecciona una opción para continuar."
+                disabled
+                className="w-full sm:w-auto"
+              >
+                <Button size="lg" className="w-full" disabled>
+                  Continuar
+                </Button>
+              </Tooltip>
+            )}
           </div>
         </div>
       </div>

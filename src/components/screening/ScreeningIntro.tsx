@@ -21,8 +21,11 @@ export function ScreeningIntro({ onStart }: ScreeningIntroProps) {
             <p>
               Este cuestionario te invita a reflexionar sobre cómo te has
               sentido en las últimas dos semanas. Usa dos instrumentos
-              ampliamente utilizados en el ámbito clínico: el PHQ-9 (estado de
-              ánimo) y el GAD-7 (ansiedad).
+              ampliamente utilizados en el ámbito clínico:
+              <br />
+              el <span className="whitespace-nowrap">PHQ-9</span> (estado de
+              ánimo) y el <span className="whitespace-nowrap">GAD-7</span>{" "}
+              (ansiedad).
             </p>
             <p>
               Es una herramienta <strong>orientativa</strong>: te ayuda a poner

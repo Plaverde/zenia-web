@@ -2,22 +2,25 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { Tooltip } from "@/components/ui/Tooltip";
 import type { ScaleId } from "@/lib/instruments";
 
 interface ScaleSelectProps {
   onSelect: (scales: ScaleId[]) => void;
 }
 
-const options: { value: string; label: string; description: string }[] = [
+const options: { value: string; label: string; description: string; info?: string }[] = [
   {
     value: "phq9",
     label: "Estado de ánimo (PHQ-9)",
     description: "9 preguntas sobre cómo te has sentido en las últimas 2 semanas.",
+    info: "El PHQ-9 mide la frecuencia de síntomas depresivos.",
   },
   {
     value: "gad7",
     label: "Ansiedad (GAD-7)",
     description: "7 preguntas sobre la frecuencia de malestares de ansiedad.",
+    info: "El GAD-7 mide la frecuencia de síntomas de ansiedad generalizada.",
   },
   {
     value: "both",
@@ -28,13 +31,8 @@ const options: { value: string; label: string; description: string }[] = [
 
 export function ScaleSelect({ onSelect }: ScaleSelectProps) {
   const [selected, setSelected] = useState<string>("");
-  const [error, setError] = useState("");
 
   function handleContinue() {
-    if (!selected) {
-      setError("Selecciona una opción para continuar.");
-      return;
-    }
     const scales: ScaleId[] =
       selected === "both" ? ["phq9", "gad7"] : [selected as ScaleId];
     onSelect(scales);
@@ -71,15 +69,23 @@ export function ScaleSelect({ onSelect }: ScaleSelectProps) {
                     name="scales"
                     value={option.value}
                     checked={selected === option.value}
-                    onChange={() => {
-                      setSelected(option.value);
-                      setError("");
-                    }}
+                    onChange={() => setSelected(option.value)}
                     className="mt-1 h-5 w-5 accent-sage-dark"
                   />
                   <span>
                     <span className="block font-medium text-charcoal">
                       {option.label}
+                      {option.info && (
+                        <Tooltip content={option.info} className="ml-1 align-middle">
+                          <span
+                            tabIndex={0}
+                            aria-label={`Qué mide ${option.label}`}
+                            className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-sage-dark text-[10px] font-semibold leading-none text-sage-dark cursor-help"
+                          >
+                            i
+                          </span>
+                        </Tooltip>
+                      )}
                     </span>
                     <span className="block text-sm text-warm-gray mt-1">
                       {option.description}
@@ -90,16 +96,18 @@ export function ScaleSelect({ onSelect }: ScaleSelectProps) {
             </div>
           </fieldset>
 
-          {error && (
-            <p role="alert" className="text-sm text-red-600 mt-3">
-              {error}
-            </p>
-          )}
-
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <Button onClick={handleContinue} size="lg" className="w-full sm:w-auto">
-              Continuar
-            </Button>
+            {selected ? (
+              <Button onClick={handleContinue} size="lg" className="w-full sm:w-auto">
+                Continuar
+              </Button>
+            ) : (
+              <Tooltip content="Selecciona una opción para continuar." disabled className="w-full sm:w-auto">
+                <Button size="lg" className="w-full" disabled>
+                  Continuar
+                </Button>
+              </Tooltip>
+            )}
           </div>
         </div>
       </div>

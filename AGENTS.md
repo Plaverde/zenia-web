@@ -90,16 +90,17 @@ All "Agendar"/"Reservar" CTAs point to `https://www.doctoralia.co/perfil/zenia-m
 - **Blog content** rendered via `react-markdown` + `rehype-sanitize` + `remark-gfm` (no dangerouslySetInnerHTML).
 - **Specialties hardcoded** in `constants.ts` (11 items, 6 categories). Services are DB-driven with constants as fallback.
 - **Slug uniqueness**: `uniqueSlug()` appends `-2`, `-3` on conflict. Regenerates on title change.
-- **Image uploads**: `/api/upload` saves to `public/uploads/` (auth required, 5MB max, JPEG/PNG/WebP/GIF).
+- **Image uploads**: `/api/upload` saves to `public/uploads/` (admin-only via `requireAdmin()`, 5MB max). File type is detected from magic bytes (`src/app/api/upload/route.ts`), never from the client-supplied filename or `Content-Type` — both are spoofable. JPEG/PNG/WebP/GIF only.
 - **Sitemap is dynamic** (`src/app/sitemap.ts`) — pulls published blog posts + specialties from DB/constants. DB failure silently omits blog routes.
 - **Postbuild**: `scripts/build-llms-full.ts` (run via `tsx`) generates `public/llms-full.txt` after each build, pulling live blog posts from the DB plus services/specialties/FAQs from `constants.ts` — do not hardcode page content back into this script.
-- **Placeholders**: Real professional data is still missing, marked as `[PLACEHOLDER]` strings across several files: `constants.ts` SITE (phone, email, colegiado, REPS), `sobre-mi/page.tsx` (`[UNIVERSIDAD]`, `[ESPECIALIZACIÓN]`, foto), `Footer.tsx` (`[NIT_O_DNI]`), `contacto/page.tsx` (mapa), `ProfessionalProfile.tsx`/`AboutPreview.tsx` (foto), `ArticlesPreview.tsx` + blog pages (imagen de artículo). Search `\[[A-Z_Á-Ú]` in `src/` to find them all. Do not invent these values. (`tarifas/page.tsx` now has real published pricing, no longer a placeholder.)
+- **Placeholders**: `SITE.phone`/`SITE.email` in `constants.ts` are now real (WhatsApp `573011331193`, `contacto@zeniaalvarez.com`). Still missing, marked as `[PLACEHOLDER]`-style strings: `constants.ts` SITE (`registrationNumber` / número de colegiado, `repsNumber` / registro REPS), `sobre-mi/page.tsx` (`[UNIVERSIDAD]`, `[ESPECIALIZACIÓN]`, foto), `Footer.tsx` (`[NIT_O_DNI]`), `contacto/page.tsx` (mapa), `ProfessionalProfile.tsx`/`AboutPreview.tsx` (foto), `ArticlesPreview.tsx` + blog pages (imagen de artículo). Search `\[[A-Z_Á-Ú]` in `src/` to find them all. Do not invent these values. (`tarifas/page.tsx` has real published pricing, no longer a placeholder.)
 - **Provisional Vercel URL**: `https://zenia-web.vercel.app` is hardcoded in 3 places — `src/app/sitemap.ts` (`baseUrl`), `src/app/layout.tsx` (`metadataBase` + Psychologist schema), `src/app/robots.ts` (sitemap URL). Update all three when a real domain is configured.
 - **BLOG_CATEGORIES** is NOT `as const` — Select component expects mutable `{ value: string; label: string }[]`.
 - **Admin sidebar** label is "Recursos" (not "Blog"). Route path `/admin/blog` unchanged.
 - **Session maxAge**: 7 days. `trustHost` removed. `debug` only in development.
 
 - **Mobile CTA bar**: Header renders a fixed bottom bar (WhatsApp + Agendar) on mobile (`md:hidden`). WhatsApp floating button is offset (`bottom-20` on mobile) to avoid overlapping it.
+- **Desktop nav has a "Recursos" dropdown**: `Header.tsx` groups Recursos, Autoevaluación, and Preguntas frecuentes under an accessible dropdown (click-outside, Escape, `aria-expanded`) to keep desktop nav to 5 links + CTA at 1280-1440px widths. Mobile menu is unaffected — still a flat vertical list with every item.
 
 ## Accessibility (WCAG AA)
 
@@ -112,7 +113,11 @@ All "Agendar"/"Reservar" CTAs point to `https://www.doctoralia.co/perfil/zenia-m
 
 - Rate limiting (Map-based, `src/lib/rate-limit.ts`): login 5 attempts/15 min per email; `/api/contact` and `/api/lead` 10 requests/15 min per IP.
 - Security headers in `next.config.ts`: X-Frame-Options DENY, X-Content-Type-Options nosniff, Referrer-Policy, X-XSS-Protection, Permissions-Policy.
-- Proxy role check: only `admin` role can access `/admin/*` and `/api/admin/*`.
+- Proxy role check: only `admin` role can access `/admin/*` and `/api/admin/*` — but `src/proxy.ts` is defense-in-depth, not the sole gate (see next point).
+- **`requireAdmin()` (`src/lib/require-admin.ts`)**: every `/api/admin/*` route handler re-validates the session + `admin` role itself, rather than trusting `proxy.ts` alone. Add this call to any new admin API route.
+- **`src/lib/admin-schemas.ts`**: zod schemas validate the request body of all 14 `/api/admin/*` routes (blog, faq, services, testimonials, messages, patients, appointments), mirroring the pattern already used in `/api/contact` and `/api/lead`. New admin routes should get a schema here too.
+- **`jsonLdScript()` (`src/lib/json-ld.ts`)**: escapes `<` in JSON-LD emitted for blog posts and FAQ so admin-editable content can't break out of the `<script>` block and inject markup. Use it for any new JSON-LD block sourced from DB content.
+- Image uploads are admin-only and type-checked by magic bytes, not client-supplied MIME/extension — see Quirks above.
 - Password must be re-seeded after deploy: `node scripts/seed-phase2.js`.
 
 ## Design System

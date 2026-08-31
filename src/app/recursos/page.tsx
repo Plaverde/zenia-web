@@ -88,7 +88,8 @@ export default function RecursosPage() {
                   Autoevaluación de ansiedad y depresión
                 </h3>
                 <p className="text-warm-gray leading-relaxed">
-                  Cuestionarios orientativos PHQ-9 y GAD-7 para reflexionar sobre
+                  Cuestionarios orientativos <span className="whitespace-nowrap">PHQ-9</span> y{" "}
+                  <span className="whitespace-nowrap">GAD-7</span> para reflexionar sobre
                   cómo te has sentido en las últimas dos semanas. Tus respuestas
                   se calculan en tu dispositivo y no se guardan: el resultado es
                   informativo y no constituye un diagnóstico.
